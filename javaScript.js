@@ -208,31 +208,98 @@ else{
 
 // switch con un while y tambien es indiferente a mayusculas o minusculas
 
-debugger
+// debugger
 
-let x = prompt("Ingresar un nombre");
+// let x = prompt("Ingresar un nombre");
 
 
-while (x != "ESC") {
+// while (x != "ESC") {
 
-    var y=x.toUpperCase();
+//     var y=x.toUpperCase();
 
-    switch(y){
+//     switch(y){
             
-case "ANA":
-    alert("HOLA", y );
-    break
+// case "ANA":
+//     alert("HOLA", y );
+//     break
 
-case "JUAN":
-        alert("HOLA",y);
-break
+// case "JUAN":
+//         alert("HOLA",y);
+// break
 
-       default:
-           ("quien eres?")
-           break; 
-    }
+//        default:
+//            ("quien eres?")
+//            break; 
+//     }
 
-    x = prompt("ingresar un nombre");
+//     x = prompt("ingresar un nombre");
+// }
+
+// funcion
+
+//  debugger
+// let nombreIngresado = prompt("Ingresar nombre")
+// alert("el nombre ingresado es " + nombreIngresado
+
+
+// Porcion de una calculadora
+
+// FUNCION SIMPLE
+// debugger
+// function calcular () {
+//     let primerNro = prompt("ingresa el primer numero:")
+//     let segundoNro= prompt("ingresa el segundo numero:")
+//     let resultado = parseFloat (primerNro) + parseFloat (segundoNro)
+// console.log("Resultado de la operacion:", resultado)
+// }
+
+// calcular()
+
+
+// FUNCION CON PARAMETROS
+// debugger
+// function calcular(parametro1, parametro2){
+// console.log("Resultado:", parseFloat(parametro1)+ parseFloat(parametro2))
+// }
+
+// function pedirNumeros(){
+//     debugger
+//     let primerNro = prompt("ingresa el primer numero:")
+//     let segundoNro = prompt("ingresa el segundo numero:")
+//         calcular(primerNro, segundoNro)
+// }
+
+// pedirNumeros()
+
+// FUNCION CON PARAMETROS MAS RETORNO
+
+// function calcular(){
+//     debugger
+
+//     let primerNro = prompt("ingresa el primer numero:")
+//     let segundoNro = prompt("ingresa el segundo numero:")
+    
+//     console.log(realizarCalculo(primerNro, segundoNro))
+// }
+
+// function realizarCalculo(param1, param2){
+//     let resultado = parseFloat(param1) + parseFloat(param2)
+//     return resultado
+// }
+
+
+// FUNCION CON PARAMETROS MAS RETORNO SIMPLIFICADO return regresa el resultado de la funcion dentro de ella
+function calcular(){
+    debugger
+
+    let primerNro = prompt("ingresa el primer numero:")
+    let segundoNro = prompt("ingresa el segundo numero:")
+    
+    console.log(realizarCalculo(primerNro, segundoNro))
+}
+
+function realizarCalculo(param1, param2){
+    return parseFloat(param1) + parseFloat(param2)
 }
 
 
