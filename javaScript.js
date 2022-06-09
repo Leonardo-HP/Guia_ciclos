@@ -289,18 +289,49 @@ else{
 
 
 // FUNCION CON PARAMETROS MAS RETORNO SIMPLIFICADO return regresa el resultado de la funcion dentro de ella
-function calcular(){
-    debugger
+// function calcular(){
+//     debugger
 
-    let primerNro = prompt("ingresa el primer numero:")
-    let segundoNro = prompt("ingresa el segundo numero:")
+//     let primerNro = prompt("ingresa el primer numero:")
+//     let segundoNro = prompt("ingresa el segundo numero:")
     
-    console.log(realizarCalculo(primerNro, segundoNro))
-}
+//     console.log(realizarCalculo(primerNro, segundoNro))
+// }
 
-function realizarCalculo(param1, param2){
-    return parseFloat(param1) + parseFloat(param2)
-}
+// function realizarCalculo(param1, param2){
+//     return parseFloat(param1) + parseFloat(param2)
+// }
+
+// FUNCION CALCULAR CON OPERADORES 
+
+// function calcular(){
+//     debugger
+    
+//     let primerNro = prompt("Ingrese el primer numero:")
+//     let segundoNro = prompt("Ingrese el segundo numero:")
+//     let operador = prompt("Selecciona la operacion:( + - * /")
+//     console.log("resultado", realizarCalculo(primerNro, segundoNro, operador))
+// }
+
+// function realizarCalculo(parametro1, parametro2, parametro3){
+// switch(parametro3){
+//     case "+":
+//         return parseInt(parametro1) + parseInt(parametro2)
+// // cuando hay un return no tiene caso usar un break por que termina el switch con un resultado
+//      case "-":
+//         return parseInt(parametro1) - parseInt(parametro2) 
+
+//     case "*":
+//         return parseInt(parametro1) * parseInt(parametro2)
+
+//     case "/":
+//         return parseInt(parametro1) / parseInt(parametro2)
+//     default:
+//         return "Error en el operador aritmetico"
+
+//     }
+// }
+
 
 
 
