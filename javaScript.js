@@ -334,4 +334,78 @@ else{
 
 
 
+//OBJETOS
 
+// const nombre = " Jason Bourne "
+// const edad = 38
+// const pais = "USA"
+
+// // un objeto se define con :
+
+// const empleado1 = {
+//     nombre: "Joe McMillan",
+//     cargo: "Salesman",
+//     empresa: "Mutiny"
+// }
+
+// const empleado2 = {
+//     nombre: "Cameron Howe",
+//     cargo: "Salesman",
+//     empresa: "Mutiny"
+// }
+
+// const empleado3 = {
+//     nombre: "Gordon Clark",
+//     cargo: "IT",
+//     empresa: "Mutiny"
+// }
+
+// const producto1 ={
+//     nombre: "Macbook Pro 13",
+//     stock: 20,
+//     precio: 799
+// }
+
+// // const personal = { nombre: "Homero", edad: 39, calle: "Av. Siempreviva 742"}
+// function saludar (){
+//     console.log("Hola", empleado4.nombre)
+// }
+
+// function cambiarNombre(){
+// let nn = prompt("Ingrese el nuevo nombre: ")
+// empleado1.nombre = nn
+// empleado1.nombre = prompt("Ingrese el nuemvo nombre:")
+
+// }
+
+//OBJETO FUNCION CONSTRUCTOR
+
+// const empleado1 = {
+//     nombre: "Joe McMillan",
+//     cargo: "Salesman",
+//     empresa: "Mutiny"
+// }
+
+function Empleado(nombre,cargo){
+    this.nombre = nombre
+    this.cargo = cargo
+    this.empresa = "Mutiny"
+}
+
+const empleado1 = new Empleado("Joe McMillan","Salesman")
+const empleado2 = new Empleado("Cameron How","Programmer")
+const empleado3 = new Empleado("Gordon Clark","IT")
+const empleado4 = new Empleado("Donna Clark","SEO")
+
+// para imprimirlo ponemos empleado1.nombre
+
+
+ // this cumple el rol de un sinonimo de lo que es nuestra funcion
+ function Producto1( nombre, stock, precio){
+    this.nombre = nombre
+    this.stock = stock
+    this.precio= precio
+    this.iva = 1.21
+ }
+
+//1.01 objetos
