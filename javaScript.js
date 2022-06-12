@@ -386,16 +386,16 @@ else{
 //     empresa: "Mutiny"
 // }
 
-function Empleado(nombre,cargo){
-    this.nombre = nombre
-    this.cargo = cargo
-    this.empresa = "Mutiny"
-}
+// function Empleado(nombre,cargo){
+//     this.nombre = nombre
+//     this.cargo = cargo
+//     this.empresa = "Mutiny"
+// }
 
-const empleado1 = new Empleado("Joe McMillan","Salesman")
-const empleado2 = new Empleado("Cameron How","Programmer")
-const empleado3 = new Empleado("Gordon Clark","IT")
-const empleado4 = new Empleado("Donna Clark","SEO")
+// const empleado1 = new Empleado("Joe McMillan","Salesman")
+// const empleado2 = new Empleado("Cameron How","Programmer")
+// const empleado3 = new Empleado("Gordon Clark","IT")
+// const empleado4 = new Empleado("Donna Clark","SEO")
 
 // para imprimirlo ponemos empleado1.nombre
 
@@ -425,65 +425,92 @@ const empleado4 = new Empleado("Donna Clark","SEO")
 //  const producto3 = new Producto("MacBook Pro 13",40, 799)
 // //1.01 objetos
 
-//METODOS 
-//Los metodos de los objetos son funciones que se limitan a poder ser ejecutadas
-//dentro del mismo objeto
+// //METODOS 
+// //Los metodos de los objetos son funciones que se limitan a poder ser ejecutadas
+// //dentro del mismo objeto
 
-//FUNCION
-//generalmente retornar un valor y son de acceso global
-function f1(){
-    return this;
-}
-//METODO
-//Se requiere un objeto y puede no retornar un valor.
-function Persona( nombre, edad, calle){
-this.nombre = nombre;
-this.edad = edad;
-this.calle = calle;
-}
+// //FUNCION
+// //generalmente retornar un valor y son de acceso global
+// function f1(){
+//     return this;
+// }
+// //METODO
+// //Se requiere un objeto y puede no retornar un valor.
+// function Persona( nombre, edad, calle){
+// this.nombre = nombre;
+// this.edad = edad;
+// this.calle = calle;
+// }
 
 
-//METODO EN JSO
+// //METODO EN JSO
 
-let cadena = "Hola Coder";
+// let cadena = "Hola Coder";
 
-//Propiedad de objeto String; Largo de cadena.
-console.log(cadena.length);
+// //Propiedad de objeto String; Largo de cadena.
+// console.log(cadena.length);
 
-//Metodo de objeto String: pasar a minuscula
-console.log(cadena.toLocaleLowerCase());
+// //Metodo de objeto String: pasar a minuscula
+// console.log(cadena.toLocaleLowerCase());
 
-//Metodo de objeto String: Pasar a mayuscula.
-console.log(cadena.toLocaleUpperCase())
+// //Metodo de objeto String: Pasar a mayuscula.
+// console.log(cadena.toLocaleUpperCase())
 
-//CLASES
+// //CLASES
 
-//En la declaracio de la clase la funcion constructora es reemplazada por el metodo CONSTRUCTOR
-// los metodos en las clases no referencian a  propiedads, se declaran dentro del bloque sin la palabra function
-  // utilizando el mismo ejemplo de la clase constructora pero convirtiendolo en clase
- class Producto {
-//dentro del constructor ponemos los parametros
-    constructor(nombre, stock, precio) {
-//aqui ponemos los parametros
-        this.nombre = nombre
-        this.stock = stock
-        this.precio = precio
-        this.iva = 1.21
-        }
- //los metodos se declaran por afuera de las llaves       
-        precioConIVA  () { 
-            let pf = this.precio * this.iva
-            return pf.toFixed(2)
-    }
-// para agregar un metodo mas, hacemos uno que descuente 
-//la cantidad despues de venderla en el stock de la siguiente manera
-// cant (cantidad)
-    descontarStock(cant){
-        // this.stock = this.stock - cant
-    // simplificandolo
-        this.stock -= cant
-}
- }
- const producto1 = new Producto("MacBook Pro 13",40, 799.4899)
- const producto2 = new Producto("MacBook Pro 13",40, 799)
- const producto3 = new Producto("MacBook Pro 13",40, 799)
+// //En la declaracio de la clase la funcion constructora es reemplazada por el metodo CONSTRUCTOR
+// // los metodos en las clases no referencian a  propiedads, se declaran dentro del bloque sin la palabra function
+//   // utilizando el mismo ejemplo de la clase constructora pero convirtiendolo en clase
+//  class Producto {
+// //dentro del constructor ponemos los parametros
+//     constructor(nombre, stock, precio) {
+// //aqui ponemos los parametros
+//         this.nombre = nombre
+//         this.stock = stock
+//         this.precio = precio
+//         this.iva = 1.21
+//         }
+//  //los metodos se declaran por afuera de las llaves       
+//         precioConIVA  () { 
+//             let pf = this.precio * this.iva
+//             return pf.toFixed(2)
+//     }
+// // para agregar un metodo mas, hacemos uno que descuente 
+// //la cantidad despues de venderla en el stock de la siguiente manera
+// // cant (cantidad)
+//     descontarStock(cant){
+//         // this.stock = this.stock - cant
+//     // simplificandolo
+//         this.stock -= cant
+// }
+//  }
+//  const producto1 = new Producto("MacBook Pro 13",40, 799.4899)
+//  const producto2 = new Producto("MacBook Pro 13",40, 799)
+//  const producto3 = new Producto("MacBook Pro 13",40, 799)
+
+//  // IN y FOR ...IN
+
+// //  IN
+//  // Podemos usar una valoracion booleana para determinar si existe una propiedad dentro de un objeto
+// // declaramos a existe, como nombre de la constante a evaluar
+// // y preguntamos si la propiedad "unidadMinima" existe dentro de nuestro objeto
+
+//  const existe = "unidadMinima" in producto1 
+// //podemos imprimirla en la consola simplemente escribiendo existe
+
+// // FOR...IN
+// // Podemos enlistar las propiedades que contiene el objeto
+// // creamos una constante "propiedad" para que enliste las existentes en el objeto
+// for (const propiedad in producto1){
+//     console.log(propiedad)
+// }
+
+// /* 
+// RESUMEN OBJETOS 
+// -Los objetos tienen propiedades y metodos
+// -El metodo constructor de un objeto sirve para crear el mismo y asignarle sus propiedades, permite crear varios objetos usando el mismo constructor
+// -Las fucniones de js son generalmente de acceso global y lo smetodos son unicamente utilizados para ser invocados por los objetos que lo contienen
+// -Las clases son otra forma de crear objetos personalizados en JS
+//      */
+
+// ARRAYS 
