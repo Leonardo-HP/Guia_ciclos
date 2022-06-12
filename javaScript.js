@@ -400,12 +400,90 @@ const empleado4 = new Empleado("Donna Clark","SEO")
 // para imprimirlo ponemos empleado1.nombre
 
 
- // this cumple el rol de un sinonimo de lo que es nuestra funcion
- function Producto1( nombre, stock, precio){
-    this.nombre = nombre
-    this.stock = stock
-    this.precio= precio
-    this.iva = 1.21
- }
+//  // this cumple el rol de un sinonimo de lo que es nuestra funcion
+//  function Producto( nombre, stock, precio){
+//     this.nombre = nombre
+//     this.stock = stock
+//     this.precio= precio
+//     this.iva = 1.21
+// //Esta es una funcion con METODO "precioConIva"
+//     this.precioConIVA = function(){
+// // Agregamos pf (precio final) 
+// //METODOS PERSONALIZADOS
+//         let pf = this.precio * this.iva
+// // el metodo .toFixed es un metodo propio de las variables number que ajusta a una cantidad determinada los posibles decimales
+//         return pf.toFixed(2)
 
-//1.01 objetos
+//     }
+//  }
+
+// // Para imprimir el resultado de la funcion con METODO en consola usamos: producto1.precioConIVA()
+
+
+//  const producto1 = new Producto("MacBook Pro 13",40, 799.4899)
+//  const producto2 = new Producto("MacBook Pro 13",40, 799)
+//  const producto3 = new Producto("MacBook Pro 13",40, 799)
+// //1.01 objetos
+
+//METODOS 
+//Los metodos de los objetos son funciones que se limitan a poder ser ejecutadas
+//dentro del mismo objeto
+
+//FUNCION
+//generalmente retornar un valor y son de acceso global
+function f1(){
+    return this;
+}
+//METODO
+//Se requiere un objeto y puede no retornar un valor.
+function Persona( nombre, edad, calle){
+this.nombre = nombre;
+this.edad = edad;
+this.calle = calle;
+}
+
+
+//METODO EN JSO
+
+let cadena = "Hola Coder";
+
+//Propiedad de objeto String; Largo de cadena.
+console.log(cadena.length);
+
+//Metodo de objeto String: pasar a minuscula
+console.log(cadena.toLocaleLowerCase());
+
+//Metodo de objeto String: Pasar a mayuscula.
+console.log(cadena.toLocaleUpperCase())
+
+//CLASES
+
+//En la declaracio de la clase la funcion constructora es reemplazada por el metodo CONSTRUCTOR
+// los metodos en las clases no referencian a  propiedads, se declaran dentro del bloque sin la palabra function
+  // utilizando el mismo ejemplo de la clase constructora pero convirtiendolo en clase
+ class Producto {
+//dentro del constructor ponemos los parametros
+    constructor(nombre, stock, precio) {
+//aqui ponemos los parametros
+        this.nombre = nombre
+        this.stock = stock
+        this.precio = precio
+        this.iva = 1.21
+        }
+ //los metodos se declaran por afuera de las llaves       
+        precioConIVA  () { 
+            let pf = this.precio * this.iva
+            return pf.toFixed(2)
+    }
+// para agregar un metodo mas, hacemos uno que descuente 
+//la cantidad despues de venderla en el stock de la siguiente manera
+// cant (cantidad)
+    descontarStock(cant){
+        // this.stock = this.stock - cant
+    // simplificandolo
+        this.stock -= cant
+}
+ }
+ const producto1 = new Producto("MacBook Pro 13",40, 799.4899)
+ const producto2 = new Producto("MacBook Pro 13",40, 799)
+ const producto3 = new Producto("MacBook Pro 13",40, 799)
