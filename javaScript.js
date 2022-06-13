@@ -514,3 +514,60 @@ else{
 //      */
 
 // ARRAYS 
+
+ //Es un tipo de dato que sirve para almacenar valores en forma de lista
+ // Se de clara como una variable con corchetes [] dentro definimos los valores separados por comas
+ // lo mejor es definir un array con CONST no con let
+
+
+ //Un array vacio
+const arrayA = [] ;
+//Un array con numeros
+const arrayB = [1,2] ;
+//un array con strings
+const arrayC = ["C1","C2","C3"] ;
+//un array con booleanos
+const arrayD = [true,false,true,false] ;
+//declaracion de array mixto
+const arrayE = [ 1, false,"C4"] ;
+
+
+const IVA = 1.21 
+const paises = ["Argentina" , "Uruguay", "Chile", "colombia" , "Venezuela" , "Mexico"]
+//                   0            1         2          3            4           5
+// Los array empiezan siempre con 0
+
+
+// esta funcion itera el array hasta imprimir todos los elementos del array
+// function recorrerArray(){ 
+// debugger
+//      for (let i=0; i < 6; i++){
+//          console.log(paises [i])
+//  }
+// }
+
+// para imprimirlos en consola a manera de tabla usamoes el console.tab
+// function recorrerArray(){ 
+//     console.table(paises)
+//      }
+// es mas facil de leer pero tambien podemos simplemente escribir el nombre del array en consola
+
+// METODOS DE ARRAY 
+    //lenght
+// El metodo lenght identifica cuantos elementos tiene un Array
+console.log(arrayE.length) //imprime 3
+
+// con el ejemplo anterior podemos integrar lenght a nuestro ciclo for en contador para que siempr sea exacto al contenido del array
+
+function recorrerArray(){ 
+for (let i=0; i < paises.length; i++){
+    console.log(paises [i])
+}
+}
+  
+    //push
+//con el metodo push podemos agregar un valor o una variable a nuestro array
+paises.push("Cuba")
+
+
+
