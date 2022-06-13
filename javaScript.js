@@ -569,5 +569,12 @@ for (let i=0; i < paises.length; i++){
 //con el metodo push podemos agregar un valor o una variable a nuestro array
 paises.push("Cuba")
 
+// una funcion para agregar el pais en un prompt
+function agregarPais() {
+    let nuevoPais=prompt("Ingresa un nuevo pais:")
+    paises.push(nuevoPais)
+    console.table(paises)
+}
 
 
+// 41 mint array
