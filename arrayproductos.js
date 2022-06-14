@@ -1,6 +1,8 @@
 const productos =[]
 const carrito = []
 
+
+
 class Producto{
     
     constructor(id,nombre,importe){
@@ -13,10 +15,13 @@ precioFinal() {
 }
 }
 
+//imprime los productos dentro del array productos
+
 function listarProductos(){
     console.table(productos)
 }
 
+//agrega un nuevo producto al array de productos
 function agregarProducto(){
     debugger
     let id= creoID()
@@ -32,6 +37,9 @@ function agregarProducto(){
 function creoID() {
     return parseInt(Math.random()* 1000)
 }
+
+
+// en lugar de insertar manualmente ya esta incluidos 2 productos al ejecutarse esta funcion
 
 generadorAutomatico()
 function generadorAutomatico(){
