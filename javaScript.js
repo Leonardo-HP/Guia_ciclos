@@ -520,228 +520,228 @@ else{
  // lo mejor es definir un array con CONST no con let
 
 
- //Un array vacio
-const arrayA = [] ;
-//Un array con numeros
-const arrayB = [1,2] ;
-//un array con strings
-const arrayC = ["C1","C2","C3"] ;
-//un array con booleanos
-const arrayD = [true,false,true,false] ;
-//declaracion de array mixto
-const arrayE = [ 1, false,"C4"] ;
+//  //Un array vacio
+// const arrayA = [] ;
+// //Un array con numeros
+// const arrayB = [1,2] ;
+// //un array con strings
+// const arrayC = ["C1","C2","C3"] ;
+// //un array con booleanos
+// const arrayD = [true,false,true,false] ;
+// //declaracion de array mixto
+// const arrayE = [ 1, false,"C4"] ;
 
 
-const IVA = 1.21 
-const paises = ["Argentina" , "Uruguay", "Chile", "colombia" , "Venezuela" , "Mexico"]
-//                   0            1         2          3            4           5
-// Los array empiezan siempre con 0
+// const IVA = 1.21 
+// const paises = ["Argentina" , "Uruguay", "Chile", "colombia" , "Venezuela" , "Mexico"]
+// //                   0            1         2          3            4           5
+// // Los array empiezan siempre con 0
 
 
-// esta funcion itera el array hasta imprimir todos los elementos del array
-// function recorrerArray(){ 
-// debugger
-//      for (let i=0; i < 6; i++){
-//          console.log(paises [i])
-//  }
+// // esta funcion itera el array hasta imprimir todos los elementos del array
+// // function recorrerArray(){ 
+// // debugger
+// //      for (let i=0; i < 6; i++){
+// //          console.log(paises [i])
+// //  }
+// // }
+
+// // para imprimirlos en consola a manera de tabla usamoes el console.tab
+// // function recorrerArray(){ 
+// //     console.table(paises)
+// //      }
+// // es mas facil de leer pero tambien podemos simplemente escribir el nombre del array en consola
+
+// function listarPaises(){
+// console.table(paises)
 // }
 
-// para imprimirlos en consola a manera de tabla usamoes el console.tab
+
+// // METODOS DE ARRAY 
+//     //lenght
+// // El metodo lenght identifica cuantos elementos tiene un Array
+// console.log(arrayE.length) //imprime 3
+
+// // con el ejemplo anterior podemos integrar lenght a nuestro ciclo for en contador para que siempr sea exacto al contenido del array
+
 // function recorrerArray(){ 
-//     console.table(paises)
-//      }
-// es mas facil de leer pero tambien podemos simplemente escribir el nombre del array en consola
-
-function listarPaises(){
-console.table(paises)
-}
-
-
-// METODOS DE ARRAY 
-    //lenght
-// El metodo lenght identifica cuantos elementos tiene un Array
-console.log(arrayE.length) //imprime 3
-
-// con el ejemplo anterior podemos integrar lenght a nuestro ciclo for en contador para que siempr sea exacto al contenido del array
-
-function recorrerArray(){ 
-for (let i=0; i < paises.length; i++){
-    console.log(paises [i])
-}
-}
+// for (let i=0; i < paises.length; i++){
+//     console.log(paises [i])
+// }
+// }
   
-    //push
-//con el metodo push podemos agregar un valor o una variable a nuestro array, siempre se agrega en la ultima posicion del array 
-paises.push("Cuba")
+//     //push
+// //con el metodo push podemos agregar un valor o una variable a nuestro array, siempre se agrega en la ultima posicion del array 
+// paises.push("Cuba")
 
-// una funcion para agregar el pais en un prompt
-// function agregarPais() {
-//     let nuevoPais=prompt("Ingresa un nuevo pais al final:")
-//     paises.push(nuevoPais)
+// // una funcion para agregar el pais en un prompt
+// // function agregarPais() {
+// //     let nuevoPais=prompt("Ingresa un nuevo pais al final:")
+// //     paises.push(nuevoPais)
+// //     console.clear()
+// //     listarPaises()
+// // }
+
+//     //unshift
+
+// // El metodo unshift nos permite agregar elementos del array al principio de este.
+
+// function agregarPaisAlInicio() {
+//     let nuevoPais=prompt("Ingresa un nuevo pais al principio:")
+//     paises.unshift(nuevoPais)
 //     console.clear()
 //     listarPaises()
 // }
 
-    //unshift
+// //shift
 
-// El metodo unshift nos permite agregar elementos del array al principio de este.
-
-function agregarPaisAlInicio() {
-    let nuevoPais=prompt("Ingresa un nuevo pais al principio:")
-    paises.unshift(nuevoPais)
-    console.clear()
-    listarPaises()
-}
-
-//shift
-
-// De igual manera como funcionan push, tenemos shift para quitar el primer elemento del array
+// // De igual manera como funcionan push, tenemos shift para quitar el primer elemento del array
 
 
-function quitarPaisAlInicio() {
-    let pais = paises.shift()
-    console.clear()
-    listarPaises()
-    alert("se ha eliminado el pais:" + pais)
+// function quitarPaisAlInicio() {
+//     let pais = paises.shift()
+//     console.clear()
+//     listarPaises()
+//     alert("se ha eliminado el pais:" + pais)
     
-}
-
-
-//pop
-
-// y pop para quitar el ultimo elemento del array
-
-
-function quitarPaisAlFinal() {
-    let pais = paises.pop()
-    console.clear()
-    listarPaises()
-    alert("se ha eliminado el pais:" + pais)
-}
-
-
-//splice
-
-// El metodo splice() permite eliminar uno o varios elementos de un array
-//en cualquier posicion , funciona con 2 parametros
-
-function quitarPaisEnPosicion() {
-
-     let queIndice=prompt("Ingresa el numero de pais:")
-     let cuantosPaises =prompt("Cuantos paisese mas desde el que ingresaste:")
-     let paisesQuitados=paises.splice(queIndice,cuantosPaises)
-     console.clear()
-    alert("Se quitaron los paises: ",paisesQuitados)
-    listarPaises()
-}
-
-//join
-
-// El metodo join nos permite generar un string con todos los elementos del array, separados por el valo rque pasamos por parametro:
-
-function imprimirPaises (){
-    alert(paises.join(" , "))
-}
-
-//concat
-
-// El metodo concat nos permite juntar 2 arrays en una
-
-arrayPerros = ["chichuahua","Gran", "DataTransfer", "Dalmata"]
-arrayGatos = ["gato negro", "Gato Blanco", "Gato pelon"]
-
-function juntarAnimale(){
-let animales = arrayPerros.concat(arrayGatos)
-alert(animales)
-}
-
-//Podemos combinar concat con join para que imprima valores con formato
-
-function juntarAnimales(){
-    let animales = arrayPerros.concat(arrayGatos)
-    alert(animales.join(" + "))
-}
-
-
-    //slice
-//El metodo slice devuelve una copia de una parte de Array dentro de un nuevo array
-// primero definimos la posicion inicial y hasta donde es el corte del nuevo array
-
-// function ultimoGatoPrimerPerro(){
-//     console.log(paises.slice(3,4))
 // }
 
-// es desde donde empieza hasta uno antes del segundo numero
 
-    //indexof
-// este metodo nos permide devolver el indice de un elemento en un array, y si no existe nos devuelve -1
+// //pop
 
-function buscarIndice() {
-    let paiseABuscar = prompt("Que paises estas buscando el indice?: " )
-    alert(paises.indexOf(paiseABuscar))
-}
+// // y pop para quitar el ultimo elemento del array
 
-//podriamos usar el indice y conbinarlo con splice, para eliminar objetos del array
-// Ejemplo propio 
 
-function quitarPaisPorNombre() {
-    let paisABorrar = prompt("Que paises quieres borrar?: " )
-    alert("Se quito el pais: "+ paisABorrar)
-    let paisesQuitados=paises.splice(paises.indexOf(paisABorrar),1)
-   console.clear()
-   listarPaises()
-} 
-//Ejemplo profe
+// function quitarPaisAlFinal() {
+//     let pais = paises.pop()
+//     console.clear()
+//     listarPaises()
+//     alert("se ha eliminado el pais:" + pais)
+// }
 
-// function quitarPais(){
-//     debugger
-//     let indice = parseInt(prompt("ingresael pais a quitard del array:"))
-//     let resultado = paises.splice(indice, 1)
-//     alert("Se ha elimindado el pais: "+ resultado)
+
+// //splice
+
+// // El metodo splice() permite eliminar uno o varios elementos de un array
+// //en cualquier posicion , funciona con 2 parametros
+
+// function quitarPaisEnPosicion() {
+
+//      let queIndice=prompt("Ingresa el numero de pais:")
+//      let cuantosPaises =prompt("Cuantos paisese mas desde el que ingresaste:")
+//      let paisesQuitados=paises.splice(queIndice,cuantosPaises)
+//      console.clear()
+//     alert("Se quitaron los paises: ",paisesQuitados)
 //     listarPaises()
 // }
 
-    //includes
-//el metoo includes permite saber si un elemento que recibe por parametro existe o no dentro de un array
-//retornando valores booleano dependiendo del caso
+// //join
 
-// function buscarPaisEnIndice(){
-// paises.includes(prompt("que pais busca"))
+// // El metodo join nos permite generar un string con todos los elementos del array, separados por el valo rque pasamos por parametro:
+
+// function imprimirPaises (){
+//     alert(paises.join(" , "))
 // }
 
-//aqui combinamos includes con push para no repetir a la hora de usar nuestra funcion agregar paises
+// //concat
+
+// // El metodo concat nos permite juntar 2 arrays en una
+
+// arrayPerros = ["chichuahua","Gran", "DataTransfer", "Dalmata"]
+// arrayGatos = ["gato negro", "Gato Blanco", "Gato pelon"]
+
+// function juntarAnimale(){
+// let animales = arrayPerros.concat(arrayGatos)
+// alert(animales)
+// }
+
+// //Podemos combinar concat con join para que imprima valores con formato
+
+// function juntarAnimales(){
+//     let animales = arrayPerros.concat(arrayGatos)
+//     alert(animales.join(" + "))
+// }
 
 
-function agregarPais() {
-let   nuevoPais = prompt("Cual es el nuevo pais?:")
+//     //slice
+// //El metodo slice devuelve una copia de una parte de Array dentro de un nuevo array
+// // primero definimos la posicion inicial y hasta donde es el corte del nuevo array
 
-// if (paises.includes(nuevoPais) == true){
+// // function ultimoGatoPrimerPerro(){
+// //     console.log(paises.slice(3,4))
+// // }
 
-//esta declaracion podria obviar el true pues el if ya lo evalua, entonces simplificamos
+// // es desde donde empieza hasta uno antes del segundo numero
 
-if (paises.includes(nuevoPais)){
-    alert("ese pais ya esta en la lista");
-    agregarPais();
-}
+//     //indexof
+// // este metodo nos permide devolver el indice de un elemento en un array, y si no existe nos devuelve -1
 
-else {
-    paises.push(nuevoPais)
-    console.clear()
-    listarPaises()
-}
-}
+// function buscarIndice() {
+//     let paiseABuscar = prompt("Que paises estas buscando el indice?: " )
+//     alert(paises.indexOf(paiseABuscar))
+// }
 
-//la siguiente funcion es un buscador
+// //podriamos usar el indice y conbinarlo con splice, para eliminar objetos del array
+// // Ejemplo propio 
 
-function buscarPais() {
-    let paisABuscar = prompt("ingresa el pais a buscar")
-    let resultado = paises.includes(paisABuscar)
-    if (resultado){
-        alert("El pais ya se encuentra cargado ")
-    }
-    else{
-        console.warn("no se encontro el pais ", paisABuscar)}
-}
+// function quitarPaisPorNombre() {
+//     let paisABorrar = prompt("Que paises quieres borrar?: " )
+//     alert("Se quito el pais: "+ paisABorrar)
+//     let paisesQuitados=paises.splice(paises.indexOf(paisABorrar),1)
+//    console.clear()
+//    listarPaises()
+// } 
+// //Ejemplo profe
+
+// // function quitarPais(){
+// //     debugger
+// //     let indice = parseInt(prompt("ingresael pais a quitard del array:"))
+// //     let resultado = paises.splice(indice, 1)
+// //     alert("Se ha elimindado el pais: "+ resultado)
+// //     listarPaises()
+// // }
+
+//     //includes
+// //el metoo includes permite saber si un elemento que recibe por parametro existe o no dentro de un array
+// //retornando valores booleano dependiendo del caso
+
+// // function buscarPaisEnIndice(){
+// // paises.includes(prompt("que pais busca"))
+// // }
+
+// //aqui combinamos includes con push para no repetir a la hora de usar nuestra funcion agregar paises
+
+
+// function agregarPais() {
+// let   nuevoPais = prompt("Cual es el nuevo pais?:")
+
+// // if (paises.includes(nuevoPais) == true){
+
+// //esta declaracion podria obviar el true pues el if ya lo evalua, entonces simplificamos
+
+// if (paises.includes(nuevoPais)){
+//     alert("ese pais ya esta en la lista");
+//     agregarPais();
+// }
+
+// else {
+//     paises.push(nuevoPais)
+//     console.clear()
+//     listarPaises()
+// }
+// }
+
+// //la siguiente funcion es un buscador
+
+// function buscarPais() {
+//     let paisABuscar = prompt("ingresa el pais a buscar")
+//     let resultado = paises.includes(paisABuscar)
+//     if (resultado){
+//         alert("El pais ya se encuentra cargado ")
+//     }
+//     else{
+//         console.warn("no se encontro el pais ", paisABuscar)}
+// }
 
     //reverse   
 // reverse es un metodo destructivo por lo cual modificara el array original

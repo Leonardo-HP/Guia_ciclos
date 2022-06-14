@@ -1,4 +1,4 @@
-// ESTAS SON VARIABLES GLOBALES
+// // ESTAS SON VARIABLES GLOBALES
 
-let nombreCompleto  = "Julian Conti"
-let nombre = "John Doe"
+// let nombreCompleto  = "Julian Conti"
+// let nombre = "John Doe"
