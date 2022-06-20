@@ -851,8 +851,8 @@ function porCadaUno(arr,fn){
 // en esta funcion se recibe un array por primer parametro y la funcion console.log por el segundo recorre el array y por cada elemento
 //hace un llamado a la funcion mencionado enviando el elemento por parametro
 
-const numeros = [ 1,2,3,4,5]
-porCadaUno(numeros, console.log)
+const numeros1 = [ 1,2,3,4,5]
+porCadaUno(numeros1, console.log)
 
 
 
@@ -896,11 +896,49 @@ console.log(duplicado)
 
 // cada imp de estos metodos estan pensados para solucionar problemas recurrentes con los arrays
 
-//!FOREACH
+// //!FOREACH
+// es similar al ejemplo "porCadaUno"
+
+//todo CON ESTE PODEMOS IMPRIMIR LOS OBJETOS EN HTML
+// itera sobre el array y por cada elemento ejecuta la funcion que enviemos por parametro,
+// la cual recibe a su vez el elemento del array que se esta recorriendo:
+const numeros = [1,2,3,4,5,6]
+
+numeros.forEach( (num)=>{
+console.log(num)
+})
+
+// por cada numero hace un console.log
+
+//? Ejemplo en linea 71 de arrayproductos.js 
 
 
 
+//!FIND
+// El metodo find() recibe una funcion de comparacion por parametro.
+// captira el elemento que se esta recorriendo y retorna troue o false segun la comparacion ejecutada
+// el metodo retorna el primer elemento que cumpla con esa condicion
+
+const cursos = [
+    {nombre: "JavaScript", precio: 15000},
+    {nombre: "ReactJs", precio: 22000},
+]
+
+//teniendo un array de objetos find nos permite hacer una busqueda de un objeto puntual
+// y lo buscamos por la propiedad que mas nos convenga 
+
+const resultado = cursos.find((el)  => el.nombre === "ReacJs")
+const resultado2 = cursos.find((el)=> el.nombre === "DW")
+
+console.log(resultado)
+console.log(resultado2)
+
+//NOTESE que el finf() retorna el primer elemento del array que cumpla con la condicione enviada
+//de ahi que podemos almacenarlo en una variable o usarlo de referencia para otro proceso
+//si no hay ninguna coincidencia en el array el metodo find retorna undifined
+//? Ejemplo practico en linea 87 de arrayproductos.js
 
 
+//! FILTER
 
-
+//? Ejemplo practico en linea 127 de arrayproductos.js 
