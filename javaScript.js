@@ -456,7 +456,7 @@ else{
 // //Metodo de objeto String: Pasar a mayuscula.
 // console.log(cadena.toLocaleUpperCase())
 
-// //CLASES
+// //!CLASES
 
 // //En la declaracio de la clase la funcion constructora es reemplazada por el metodo CONSTRUCTOR
 // // los metodos en las clases no referencian a  propiedads, se declaran dentro del bloque sin la palabra function
@@ -506,7 +506,7 @@ else{
 // }
 
 // /* 
-// RESUMEN OBJETOS 
+// !RESUMEN OBJETOS 
 // -Los objetos tienen propiedades y metodos
 // -El metodo constructor de un objeto sirve para crear el mismo y asignarle sus propiedades, permite crear varios objetos usando el mismo constructor
 // -Las fucniones de js son generalmente de acceso global y lo smetodos son unicamente utilizados para ser invocados por los objetos que lo contienen
@@ -557,7 +557,7 @@ else{
 // }
 
 
-// // METODOS DE ARRAY 
+//! METODOS DE ARRAY 
 //     //lenght
 // // El metodo lenght identifica cuantos elementos tiene un Array
 // console.log(arrayE.length) //imprime 3
@@ -593,7 +593,7 @@ else{
 //     listarPaises()
 // }
 
-// //shift
+//! //shift
 
 // // De igual manera como funcionan push, tenemos shift para quitar el primer elemento del array
 
@@ -607,7 +607,7 @@ else{
 // }
 
 
-// //pop
+//! //pop
 
 // // y pop para quitar el ultimo elemento del array
 
@@ -620,7 +620,7 @@ else{
 // }
 
 
-// //splice
+//! //splice
 
 // // El metodo splice() permite eliminar uno o varios elementos de un array
 // //en cualquier posicion , funciona con 2 parametros
@@ -635,7 +635,7 @@ else{
 //     listarPaises()
 // }
 
-// //join
+//! //join
 
 // // El metodo join nos permite generar un string con todos los elementos del array, separados por el valo rque pasamos por parametro:
 
@@ -643,7 +643,7 @@ else{
 //     alert(paises.join(" , "))
 // }
 
-// //concat
+//! //concat
 
 // // El metodo concat nos permite juntar 2 arrays en una
 
@@ -663,7 +663,7 @@ else{
 // }
 
 
-//     //slice
+//!     //slice
 // //El metodo slice devuelve una copia de una parte de Array dentro de un nuevo array
 // // primero definimos la posicion inicial y hasta donde es el corte del nuevo array
 
@@ -673,7 +673,7 @@ else{
 
 // // es desde donde empieza hasta uno antes del segundo numero
 
-//     //indexof
+//!     //indexof
 // // este metodo nos permide devolver el indice de un elemento en un array, y si no existe nos devuelve -1
 
 // function buscarIndice() {
@@ -701,7 +701,7 @@ else{
 // //     listarPaises()
 // // }
 
-//     //includes
+//!     //includes
 // //el metoo includes permite saber si un elemento que recibe por parametro existe o no dentro de un array
 // //retornando valores booleano dependiendo del caso
 
@@ -749,7 +749,7 @@ else{
 
 //console.log(paises.reverse)
 
-//RESUMEN DE METODOS
+//!RESUMEN DE METODOS
 /*
 lenght             --- averiguar longitud
 push/unshift       --- agregar
@@ -773,7 +773,7 @@ array.push({id: 3, producto: "Pan"})
 
 
 
-// HIGH ORDER FUNCTIONS
+//! HIGH ORDER FUNCTIONS
 
     // let total = 0
     // for (let i = 1; i<= 10 ; 1++) {
@@ -794,7 +794,7 @@ array.push({id: 3, producto: "Pan"})
 
 //este tipo de funciones nos permiten abstraernos sobre aacciones y no solo valores
 
-// RETORNAR FUNCIONES 
+//! RETORNAR FUNCIONES 
 
 //UNa funcion que retorna una funcion:
 
@@ -830,13 +830,13 @@ let resta = asignarOperacion("restar")
 console.log(suma(4,6))
 console.log(resta(5,3))
 
-//RECIBIR FUNCIONES POR PARAMETRO
+//!RECIBIR FUNCIONES POR PARAMETRO
 
 // escribir funciones que puedan recibir funciones por parametro
 
 // necesitamos recorrer un array y hacer algo con cada elemento
 
-// //    CON ESTO FORMARE LA FUNCION PARA MOSTRAR EL INVENTARIO
+// todo    CON ESTO FORMARE LA FUNCION PARA MOSTRAR EL INVENTARIO
 
 // esta funcion recibe un array por primer parametro y una funcion por el segundo.
 // recorre el array y por cada elemento
@@ -854,6 +854,49 @@ function porCadaUno(arr,fn){
 const numeros = [ 1,2,3,4,5]
 porCadaUno(numeros, console.log)
 
+
+
+// console.log
+
+//enviando console.log por parametro , se ejecuta esa funcion con cada elemento del array
+
+//podemos enviar funciones diferentes en distintos llamados y ejecutar distintas acciones sobre los elementos del array
+// usando la misma funcion 
+
+
+
+let total = 0 
+function acumular(num){
+total += num
+}
+
+porCadaUno(numeros, acumular)
+console.log(total)
+
+//! ARROS FUNCTION
+//Es usual definir la funcion directamente sobre el parametro como la funcion anonima, aprovechando la sintaxis de arrow function
+//esto permite definir acciones mas dinamicas
+
+const duplicado = []
+
+porCadaUno(numeros, (el) =>{
+        duplicado.push(el *2)
+})
+
+console.log(duplicado)
+
+//! METODOS DE BUSQUEDA Y TANSFORMACION 
+// forEach()
+// find()
+// filter()
+// some()
+// Map()
+// reduce()
+// sort()
+
+// cada imp de estos metodos estan pensados para solucionar problemas recurrentes con los arrays
+
+//!FOREACH
 
 
 
