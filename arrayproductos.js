@@ -141,3 +141,22 @@ debugger
     }
 
 }
+
+
+//? Ejemplo de SOME
+
+function existeProducto() {
+    let aBuscar = prompt("ingrese el nombre del producto a buscar:").toUpperCase()
+    debugger
+        let resultado = productos.some((producto) =>producto.id === parseInt(aBuscar))
+        if (resultado){
+            console.log("El producto exite")
+        }
+        else{
+            console.error("no se encontro el producto.")
+        }
+    }
+
+
+
+    

@@ -940,5 +940,59 @@ console.log(resultado2)
 
 
 //! FILTER
+// El metodo filter() recibe, al igual que find(), una funcion comparadora por parametro , y retorna un nuevo array con todos los elementos que cumplan esa condicion.
+
+// si no tiene coincidencias retornara un array vacio
+
+const cursos2 = [
+    {nombre: "JavaScript", precio:15000},
+    {nombre: "ReactJS", precio: 22000},
+    {nombre: "AngularJS", precio: 22000},
+    {nombre: "desarollo web", precio: 16000}
+]
+
+const resultado3 = cursos.filter((el) => el.nombre.includes("JS"))
+const resultado4 =cursos.filter ((el ) => el.precio < 17000)
+
+console.log(resultado)
+// [
+//     {nombre: "ReactJS", precio: 22000},
+//     {nombre: "AngularJS", precio: 22000},
+// ]
 
 //? Ejemplo practico en linea 127 de arrayproductos.js 
+
+
+//!SOME
+
+// El metodo some() funciona igual que el find() recibiendo una funcion de busquedad. En vez de retornar el elemento encontrado, some() retorna true
+// o false segun el resultado de la iteracion de busqueda
+console.log(cursos.some ((el)=>  el.nombre =="Desarollo Web"))
+
+//true
+
+console.log (cursos.some((el) => el.nombre =="VueJS"))
+
+// false
+
+//? Ejemplo practico en linea 146 de arrayproductos.js 
+
+//! MAP
+
+// EL metodo MAP() crea un nuevo array con todos los elementos del original transformados segun las operaciones
+//de la nueva funcion enviada por parametro, tiene la misma cantidad de elementos
+// pero los almacenados son el return de la funcion:
+
+const cursos3 = [
+    {nombre: "JavaScript", precio:15000},
+    {nombre: "ReactJS", precio: 22000},
+    {nombre: "AngularJS", precio: 22000},
+    {nombre: "desarollo web", precio: 16000}
+]
+
+const nombres = cursos3.map((el)=> el.nombre)
+
+console.log(nombres)
+// ["javascript","ReactJS","angular",DesarolloWeb]
+
+//? Ejemplo practico en linea 162 de arrayproductos.js 
