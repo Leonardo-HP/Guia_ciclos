@@ -770,3 +770,94 @@ reverse            --- revertir el orden del array
 const objeto1 = {id: 1, producto: "arrosz"};
 const array = [objeto1, {id:2, producto: "Fideo"}];
 array.push({id: 3, producto: "Pan"})
+
+
+
+// HIGH ORDER FUNCTIONS
+
+    // let total = 0
+    // for (let i = 1; i<= 10 ; 1++) {
+
+    // total +=1
+    // }
+
+    // console.log(total)
+
+/////////////////////////////////////////////////
+
+// console.log( sumarRango (1,10))
+
+// solo como anotacion tanto el algoritmo como la llamada de la funcion dan el mismo resultado
+// lo cualse conoce como abstracccion
+
+// las funciones de orden superior es aquella que retorna una funcion o recibe una funcion por parametro
+
+//este tipo de funciones nos permiten abstraernos sobre aacciones y no solo valores
+
+// RETORNAR FUNCIONES 
+
+//UNa funcion que retorna una funcion:
+
+// function mayorQue(n){
+//     return(m) => m > n
+// }
+
+// let mayorQueDiez = mayorQue(10)
+
+// console.log ( mayorQueDiez(12))  //true
+// console.log (mayorQueDiez(8))  //false
+
+// En ese caso mayorQue(n) retorna una funcion que compara un valor contra n y retorna true or false (por que es el resultado de la comparacion)
+//en mayorQueDiez se termina asignando la funcion que retorna el llamado mayorQue(10) Al ser llamada con el valor de 10 
+//la asgnacion se resuelve de la siguiente manera
+// let mayorQueDiez = (m) => m > 10
+
+
+
+// En este ejemplo, segun el parametro op se termina asignand un return de funcion u otro a las variables declaradas
+function asignarOperacion(op){
+if   (op == "sumar") {
+    return (a,b) => a+b
+}
+else if (op == "restar") {
+    return (a,b) => a-b
+}
+}
+
+let suma = asignarOperacion("sumar")
+let resta = asignarOperacion("restar")
+
+console.log(suma(4,6))
+console.log(resta(5,3))
+
+//RECIBIR FUNCIONES POR PARAMETRO
+
+// escribir funciones que puedan recibir funciones por parametro
+
+// necesitamos recorrer un array y hacer algo con cada elemento
+
+// //    CON ESTO FORMARE LA FUNCION PARA MOSTRAR EL INVENTARIO
+
+// esta funcion recibe un array por primer parametro y una funcion por el segundo.
+// recorre el array y por cada elemento
+
+function porCadaUno(arr,fn){
+    for ( const el of arr) {
+        fn(el)
+    }
+}
+
+
+// en esta funcion se recibe un array por primer parametro y la funcion console.log por el segundo recorre el array y por cada elemento
+//hace un llamado a la funcion mencionado enviando el elemento por parametro
+
+const numeros = [ 1,2,3,4,5]
+porCadaUno(numeros, console.log)
+
+
+
+
+
+
+
+
