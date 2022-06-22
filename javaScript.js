@@ -767,289 +767,289 @@ reverse            --- revertir el orden del array
 //podemos asignar objetos literales o previamente instanciados en la declaracion del array o agregar nuevos objetos usando el metodo push 
 //y el constructo
 
-const objeto1 = {id: 1, producto: "arrosz"};
-const array = [objeto1, {id:2, producto: "Fideo"}];
-array.push({id: 3, producto: "Pan"})
+// const objeto1 = {id: 1, producto: "arrosz"};
+// const array = [objeto1, {id:2, producto: "Fideo"}];
+// array.push({id: 3, producto: "Pan"})
 
 
 
-//! HIGH ORDER FUNCTIONS
+// //! HIGH ORDER FUNCTIONS
 
-    // let total = 0
-    // for (let i = 1; i<= 10 ; 1++) {
+//     // let total = 0
+//     // for (let i = 1; i<= 10 ; 1++) {
 
-    // total +=1
-    // }
+//     // total +=1
+//     // }
 
-    // console.log(total)
+//     // console.log(total)
 
-/////////////////////////////////////////////////
+// /////////////////////////////////////////////////
 
-// console.log( sumarRango (1,10))
+// // console.log( sumarRango (1,10))
 
-// solo como anotacion tanto el algoritmo como la llamada de la funcion dan el mismo resultado
-// lo cualse conoce como abstracccion
+// // solo como anotacion tanto el algoritmo como la llamada de la funcion dan el mismo resultado
+// // lo cualse conoce como abstracccion
 
-// las funciones de orden superior es aquella que retorna una funcion o recibe una funcion por parametro
+// // las funciones de orden superior es aquella que retorna una funcion o recibe una funcion por parametro
 
-//este tipo de funciones nos permiten abstraernos sobre aacciones y no solo valores
+// //este tipo de funciones nos permiten abstraernos sobre aacciones y no solo valores
 
-//! RETORNAR FUNCIONES 
+// //! RETORNAR FUNCIONES 
 
-//UNa funcion que retorna una funcion:
+// //UNa funcion que retorna una funcion:
 
-// function mayorQue(n){
-//     return(m) => m > n
+// // function mayorQue(n){
+// //     return(m) => m > n
+// // }
+
+// // let mayorQueDiez = mayorQue(10)
+
+// // console.log ( mayorQueDiez(12))  //true
+// // console.log (mayorQueDiez(8))  //false
+
+// // En ese caso mayorQue(n) retorna una funcion que compara un valor contra n y retorna true or false (por que es el resultado de la comparacion)
+// //en mayorQueDiez se termina asignando la funcion que retorna el llamado mayorQue(10) Al ser llamada con el valor de 10 
+// //la asgnacion se resuelve de la siguiente manera
+// // let mayorQueDiez = (m) => m > 10
+
+
+
+// // En este ejemplo, segun el parametro op se termina asignand un return de funcion u otro a las variables declaradas
+// function asignarOperacion(op){
+// if   (op == "sumar") {
+//     return (a,b) => a+b
+// }
+// else if (op == "restar") {
+//     return (a,b) => a-b
+// }
 // }
 
-// let mayorQueDiez = mayorQue(10)
+// let suma = asignarOperacion("sumar")
+// let resta = asignarOperacion("restar")
 
-// console.log ( mayorQueDiez(12))  //true
-// console.log (mayorQueDiez(8))  //false
+// console.log(suma(4,6))
+// console.log(resta(5,3))
 
-// En ese caso mayorQue(n) retorna una funcion que compara un valor contra n y retorna true or false (por que es el resultado de la comparacion)
-//en mayorQueDiez se termina asignando la funcion que retorna el llamado mayorQue(10) Al ser llamada con el valor de 10 
-//la asgnacion se resuelve de la siguiente manera
-// let mayorQueDiez = (m) => m > 10
+// //!RECIBIR FUNCIONES POR PARAMETRO
 
+// // escribir funciones que puedan recibir funciones por parametro
 
+// // necesitamos recorrer un array y hacer algo con cada elemento
 
-// En este ejemplo, segun el parametro op se termina asignand un return de funcion u otro a las variables declaradas
-function asignarOperacion(op){
-if   (op == "sumar") {
-    return (a,b) => a+b
-}
-else if (op == "restar") {
-    return (a,b) => a-b
-}
-}
+// // todo    CON ESTO FORMARE LA FUNCION PARA MOSTRAR EL INVENTARIO
 
-let suma = asignarOperacion("sumar")
-let resta = asignarOperacion("restar")
+// // esta funcion recibe un array por primer parametro y una funcion por el segundo.
+// // recorre el array y por cada elemento
 
-console.log(suma(4,6))
-console.log(resta(5,3))
-
-//!RECIBIR FUNCIONES POR PARAMETRO
-
-// escribir funciones que puedan recibir funciones por parametro
-
-// necesitamos recorrer un array y hacer algo con cada elemento
-
-// todo    CON ESTO FORMARE LA FUNCION PARA MOSTRAR EL INVENTARIO
-
-// esta funcion recibe un array por primer parametro y una funcion por el segundo.
-// recorre el array y por cada elemento
-
-function porCadaUno(arr,fn){
-    for ( const el of arr) {
-        fn(el)
-    }
-}
+// function porCadaUno(arr,fn){
+//     for ( const el of arr) {
+//         fn(el)
+//     }
+// }
 
 
-// en esta funcion se recibe un array por primer parametro y la funcion console.log por el segundo recorre el array y por cada elemento
-//hace un llamado a la funcion mencionado enviando el elemento por parametro
+// // en esta funcion se recibe un array por primer parametro y la funcion console.log por el segundo recorre el array y por cada elemento
+// //hace un llamado a la funcion mencionado enviando el elemento por parametro
 
-const numeros1 = [ 1,2,3,4,5]
-porCadaUno(numeros1, console.log)
+// const numeros1 = [ 1,2,3,4,5]
+// porCadaUno(numeros1, console.log)
 
 
 
-// console.log
+// // console.log
 
-//enviando console.log por parametro , se ejecuta esa funcion con cada elemento del array
+// //enviando console.log por parametro , se ejecuta esa funcion con cada elemento del array
 
-//podemos enviar funciones diferentes en distintos llamados y ejecutar distintas acciones sobre los elementos del array
-// usando la misma funcion 
-
-
-
-let total = 0 
-function acumular(num){
-total += num
-}
-
-porCadaUno(numeros, acumular)
-console.log(total)
-
-//! ARROS FUNCTION
-//Es usual definir la funcion directamente sobre el parametro como la funcion anonima, aprovechando la sintaxis de arrow function
-//esto permite definir acciones mas dinamicas
-
-const duplicado = []
-
-porCadaUno(numeros, (el) =>{
-        duplicado.push(el *2)
-})
-
-console.log(duplicado)
-
-//! METODOS DE BUSQUEDA Y TANSFORMACION 
-// forEach()
-// find()
-// filter()
-// some()
-// Map()
-// reduce()
-// sort()
-
-// cada imp de estos metodos estan pensados para solucionar problemas recurrentes con los arrays
-
-// //!FOREACH
-// es similar al ejemplo "porCadaUno"
-
-//todo CON ESTE PODEMOS IMPRIMIR LOS OBJETOS EN HTML
-// itera sobre el array y por cada elemento ejecuta la funcion que enviemos por parametro,
-// la cual recibe a su vez el elemento del array que se esta recorriendo:
-const numeros = [1,2,3,4,5,6]
-
-numeros.forEach( (num)=>{
-console.log(num)
-})
-
-// por cada numero hace un console.log
-
-//? Ejemplo en linea 71 de arrayproductos.js 
+// //podemos enviar funciones diferentes en distintos llamados y ejecutar distintas acciones sobre los elementos del array
+// // usando la misma funcion 
 
 
 
-//!FIND
-// El metodo find() recibe una funcion de comparacion por parametro.
-// captira el elemento que se esta recorriendo y retorna troue o false segun la comparacion ejecutada
-// el metodo retorna el primer elemento que cumpla con esa condicion
+// let total = 0 
+// function acumular(num){
+// total += num
+// }
 
-const cursos = [
-    {nombre: "JavaScript", precio: 15000},
-    {nombre: "ReactJs", precio: 22000},
-]
+// porCadaUno(numeros, acumular)
+// console.log(total)
 
-//teniendo un array de objetos find nos permite hacer una busqueda de un objeto puntual
-// y lo buscamos por la propiedad que mas nos convenga 
+// //! ARROS FUNCTION
+// //Es usual definir la funcion directamente sobre el parametro como la funcion anonima, aprovechando la sintaxis de arrow function
+// //esto permite definir acciones mas dinamicas
 
-const resultado = cursos.find((el)  => el.nombre === "ReacJs")
-const resultado2 = cursos.find((el)=> el.nombre === "DW")
+// const duplicado = []
 
-console.log(resultado)
-console.log(resultado2)
+// porCadaUno(numeros, (el) =>{
+//         duplicado.push(el *2)
+// })
 
-//NOTESE que el finf() retorna el primer elemento del array que cumpla con la condicione enviada
-//de ahi que podemos almacenarlo en una variable o usarlo de referencia para otro proceso
-//si no hay ninguna coincidencia en el array el metodo find retorna undifined
-//? Ejemplo practico en linea 87 de arrayproductos.js
+// console.log(duplicado)
+
+// //! METODOS DE BUSQUEDA Y TANSFORMACION 
+// // forEach()
+// // find()
+// // filter()
+// // some()
+// // Map()
+// // reduce()
+// // sort()
+
+// // cada imp de estos metodos estan pensados para solucionar problemas recurrentes con los arrays
+
+// // //!FOREACH
+// // es similar al ejemplo "porCadaUno"
+
+// //todo CON ESTE PODEMOS IMPRIMIR LOS OBJETOS EN HTML
+// // itera sobre el array y por cada elemento ejecuta la funcion que enviemos por parametro,
+// // la cual recibe a su vez el elemento del array que se esta recorriendo:
+// const numeros = [1,2,3,4,5,6]
+
+// numeros.forEach( (num)=>{
+// console.log(num)
+// })
+
+// // por cada numero hace un console.log
+
+// //? Ejemplo en linea 71 de arrayproductos.js 
 
 
-//! FILTER
-// El metodo filter() recibe, al igual que find(), una funcion comparadora por parametro , y retorna un nuevo array con todos los elementos que cumplan esa condicion.
 
-// si no tiene coincidencias retornara un array vacio
+// //!FIND
+// // El metodo find() recibe una funcion de comparacion por parametro.
+// // captira el elemento que se esta recorriendo y retorna troue o false segun la comparacion ejecutada
+// // el metodo retorna el primer elemento que cumpla con esa condicion
 
-const cursos2 = [
-    {nombre: "JavaScript", precio:15000},
-    {nombre: "ReactJS", precio: 22000},
-    {nombre: "AngularJS", precio: 22000},
-    {nombre: "desarollo web", precio: 16000}
-]
-
-const resultado3 = cursos.filter((el) => el.nombre.includes("JS"))
-const resultado4 =cursos.filter ((el ) => el.precio < 17000)
-
-console.log(resultado)
-// [
-//     {nombre: "ReactJS", precio: 22000},
-//     {nombre: "AngularJS", precio: 22000},
+// const cursos = [
+//     {nombre: "JavaScript", precio: 15000},
+//     {nombre: "ReactJs", precio: 22000},
 // ]
 
-//? Ejemplo practico en linea 127 de arrayproductos.js 
+// //teniendo un array de objetos find nos permite hacer una busqueda de un objeto puntual
+// // y lo buscamos por la propiedad que mas nos convenga 
+
+// const resultado = cursos.find((el)  => el.nombre === "ReacJs")
+// const resultado2 = cursos.find((el)=> el.nombre === "DW")
+
+// console.log(resultado)
+// console.log(resultado2)
+
+// //NOTESE que el finf() retorna el primer elemento del array que cumpla con la condicione enviada
+// //de ahi que podemos almacenarlo en una variable o usarlo de referencia para otro proceso
+// //si no hay ninguna coincidencia en el array el metodo find retorna undifined
+// //? Ejemplo practico en linea 87 de arrayproductos.js
 
 
-//!SOME
+// //! FILTER
+// // El metodo filter() recibe, al igual que find(), una funcion comparadora por parametro , y retorna un nuevo array con todos los elementos que cumplan esa condicion.
 
-// El metodo some() funciona igual que el find() recibiendo una funcion de busquedad. En vez de retornar el elemento encontrado, some() retorna true
-// o false segun el resultado de la iteracion de busqueda
-console.log(cursos.some ((el)=>  el.nombre =="Desarollo Web"))
+// // si no tiene coincidencias retornara un array vacio
 
-//true
+// const cursos2 = [
+//     {nombre: "JavaScript", precio:15000},
+//     {nombre: "ReactJS", precio: 22000},
+//     {nombre: "AngularJS", precio: 22000},
+//     {nombre: "desarollo web", precio: 16000}
+// ]
 
-console.log (cursos.some((el) => el.nombre =="VueJS"))
+// const resultado3 = cursos.filter((el) => el.nombre.includes("JS"))
+// const resultado4 =cursos.filter ((el ) => el.precio < 17000)
 
-// false
+// console.log(resultado)
+// // [
+// //     {nombre: "ReactJS", precio: 22000},
+// //     {nombre: "AngularJS", precio: 22000},
+// // ]
 
-//? Ejemplo practico en linea 146 de arrayproductos.js 
-
-//! MAP
-
-// EL metodo MAP() crea un nuevo array con todos los elementos del original transformados segun las operaciones
-//de la nueva funcion enviada por parametro, tiene la misma cantidad de elementos
-// pero los almacenados son el return de la funcion:
-
-const cursos3 = [
-    {nombre: "JavaScript", precio:15000},
-    {nombre: "ReactJS", precio: 22000},
-    {nombre: "AngularJS", precio: 22000},
-    {nombre: "desarollo web", precio: 16000}
-]
-
-const nombres = cursos3.map((el)=> el.nombre)
-
-console.log(nombres)
-// ["javascript","ReactJS","angular",DesarolloWeb]
-
-const actualizado = cursos.map((el)=>{
-    return {
-        nombre: el.nombre,
-        precio: el.precio *1.23
-    }
-})
-
-console.log(actualizado)
-//la funcion retorna la propiedad precio multiplicada por 1.23
+// //? Ejemplo practico en linea 127 de arrayproductos.js 
 
 
-//? Ejemplo practico en linea 162 de arrayproductos.js 
+// //!SOME
 
-//! REDUCE ()
+// // El metodo some() funciona igual que el find() recibiendo una funcion de busquedad. En vez de retornar el elemento encontrado, some() retorna true
+// // o false segun el resultado de la iteracion de busqueda
+// console.log(cursos.some ((el)=>  el.nombre =="Desarollo Web"))
 
-// EL metodo reduce() nos permite obtener un unico valor tras iterar sobre el array
-//funciona como un metodo que resume el array a un  unico valor de retorno
+// //true
 
-//? Ejemplo practico en linea 178 de arrayproductos.js 
+// console.log (cursos.some((el) => el.nombre =="VueJS"))
 
-//! SORT
+// // false
 
-// El metodo sort() nos permite reordenar un array segun un criterio que definamos 
-// recibe una funcion de comparacion por parametro que , a la vez recibe dos elementos del array
-//la funcion retorna  un valor numerico (1,-1,0) que indica que elemento se posiciona antes o despues
+// //? Ejemplo practico en linea 146 de arrayproductos.js 
 
-// ESTE METODO ES DESTRUCTIVO ES DECIR MODIFICA EL ARRAY SOBRE EL CUAL SE LLAMA
+// //! MAP
 
-const otrosnumeros = [4,1,5,200] ;
-numeros.sort((a,b)=> a-b ); //[1,5,40,200] 
-numeros.sort((a,b)=> b-a ); // [200,40,5,1]
-// para ordenar numeros, basta con restar uno al otro y el orden indica si sera ordenado de forma ascendente o descendente
+// // EL metodo MAP() crea un nuevo array con todos los elementos del original transformados segun las operaciones
+// //de la nueva funcion enviada por parametro, tiene la misma cantidad de elementos
+// // pero los almacenados son el return de la funcion:
+
+// const cursos3 = [
+//     {nombre: "JavaScript", precio:15000},
+//     {nombre: "ReactJS", precio: 22000},
+//     {nombre: "AngularJS", precio: 22000},
+//     {nombre: "desarollo web", precio: 16000}
+// ]
+
+// const nombres = cursos3.map((el)=> el.nombre)
+
+// console.log(nombres)
+// // ["javascript","ReactJS","angular",DesarolloWeb]
+
+// const actualizado = cursos.map((el)=>{
+//     return {
+//         nombre: el.nombre,
+//         precio: el.precio *1.23
+//     }
+// })
+
+// console.log(actualizado)
+// //la funcion retorna la propiedad precio multiplicada por 1.23
 
 
-//! EJEMPLO DE METODOS DE ORDEN SUPERIOR
+// //? Ejemplo practico en linea 162 de arrayproductos.js 
 
-const productos2 =[{ id: 1, producto: "Arroz",precio: 125},
-                   { id: 2, producto: "Fideo",precio: 70},
-                   { id: 3, producto: "Pan",precio: 50},
-                   { id: 4, producto: "Flan",precio: 100},
-]
+// //! REDUCE ()
 
-const buscado = productos2.find(producto => producto.id === 3)
-console.log(buscado)   // { id: 3, producto: "Pan",precio: 50}
+// // EL metodo reduce() nos permite obtener un unico valor tras iterar sobre el array
+// //funciona como un metodo que resume el array a un  unico valor de retorno
 
-const existe = productos2.some(producto =>producto.nombre === "Harina")
-console.log(existe) // false
+// //? Ejemplo practico en linea 178 de arrayproductos.js 
 
-const baratos = productos2.some(producto => producto.precio <3)
-console.log(baratos)
-// [{  id: 2, producto: "Fideo",precio: 70}, {id: 3, producto: "Pan",precio: 50} }]
+// //! SORT
 
-const listaNombres = productos2.map(producto => producto.nombre)
-console.log(listaNombres)
-//[ "Arroz", "Fideo", "Pan", "Flan"]
+// // El metodo sort() nos permite reordenar un array segun un criterio que definamos 
+// // recibe una funcion de comparacion por parametro que , a la vez recibe dos elementos del array
+// //la funcion retorna  un valor numerico (1,-1,0) que indica que elemento se posiciona antes o despues
+
+// // ESTE METODO ES DESTRUCTIVO ES DECIR MODIFICA EL ARRAY SOBRE EL CUAL SE LLAMA
+
+// const otrosnumeros = [4,1,5,200] ;
+// numeros.sort((a,b)=> a-b ); //[1,5,40,200] 
+// numeros.sort((a,b)=> b-a ); // [200,40,5,1]
+// // para ordenar numeros, basta con restar uno al otro y el orden indica si sera ordenado de forma ascendente o descendente
+
+
+// //! EJEMPLO DE METODOS DE ORDEN SUPERIOR
+
+// const productos2 =[{ id: 1, producto: "Arroz",precio: 125},
+//                    { id: 2, producto: "Fideo",precio: 70},
+//                    { id: 3, producto: "Pan",precio: 50},
+//                    { id: 4, producto: "Flan",precio: 100},
+// ]
+
+// const buscado = productos2.find(producto => producto.id === 3)
+// console.log(buscado)   // { id: 3, producto: "Pan",precio: 50}
+
+// const existe = productos2.some(producto =>producto.nombre === "Harina")
+// console.log(existe) // false
+
+// const baratos = productos2.some(producto => producto.precio <3)
+// console.log(baratos)
+// // [{  id: 2, producto: "Fideo",precio: 70}, {id: 3, producto: "Pan",precio: 50} }]
+
+// const listaNombres = productos2.map(producto => producto.nombre)
+// console.log(listaNombres)
+// //[ "Arroz", "Fideo", "Pan", "Flan"]
 
 
 //! DOM 
@@ -1060,6 +1060,57 @@ console.log(listaNombres)
 
 //Es decir que , por ejemplo, desde JavaScript podemos modificar el texto contenido de una equiqueta < h1>
 
+//!! COMO FUNCIONA?
+// la estructura de un documento html son las etiquetas
+
+// En el model de Objetos del Dcoument (DOM), cada etiqueta HTML es un objeto, al que podemos llamar nodo
+
+//las etiquetas anidadas son llamas "nodosHijos" de la etiquta "nodo padre" que las contiene
 
 
+// todos estos objetos son accesibles empleando JavaScript mediante el objeto global  document 
+//po ejemplo: document.body es el nodo que represnta la eququeta < body> 
 
+//* <p>Esta pagina es <strong> muy sencilla </strong> </p> */
+//la etiqueta < P> se transforma en los siguientes nodos del DOM :
+
+//                      #text-7
+//                      "Esta pagina es "
+//                   / 
+//        p deriva a                 
+//                   \
+//                     STRONG--------#text-8
+//                                   "muy sencilla"
+
+
+// TOD o ESTO PODEMOS REVISARLO DESDE "ELEMENTS" EN LA HERRAMIENTA DE DESALLORADOR DE CHROME
+
+//! TIPOS DE NODOS
+// La especificacion completa de DOM define 12 tipos de nodos, los mas usados son:
+
+//DOCUMENT: Nodo raiz del que derivan todos los demas nodods del arbol
+//ELEMENT: Representa cada una de las etiquetas XHTML. Puede contener atributos y derivar otros nodos de el
+//ATTR: Se define un nodo de este tipo para representar cada uno de los atributos de las etiquetas HTML, es decir uno por cada par atributo = valor
+//TXT:Nodo que contiene el texto encerrado por una etiqueta HTML
+//COMMENT: Representa los comentarios incluidos en la pagina HTML 
+
+
+//! ACCEDER A LOS NODOS
+// Existen distintos metodos para acceder a los elementos del DOM empleando la clase DOCUMENT
+
+// los mas comunes son:
+// getElementById()
+// getElementsByClassName()
+// getElementsByTagName()
+
+//! getElementById()
+//El metodo getElementById() sirve para acceder a un elemento de la estructura HTML
+// utilizando su atributo ID como identificacion.
+
+//? Ejemplos en variables.js linea 1 y html 
+
+//! getElementsByClassName()
+// sirve para acceder a un conunto de elementos de la estructura HTML, utilizando el atributo class como identificacion
+
+//! getElementsByTagName()
+//sirve para acceder al conjunto de elmentos de la estructura HTML, utilizando su nnomre de etiqueta como identificacion

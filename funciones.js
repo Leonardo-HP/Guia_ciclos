@@ -9,7 +9,7 @@
 
 // }
 
-let edad = 47
+// let edad = 47
 
 // VARIABLES LOCALES
 
