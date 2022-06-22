@@ -1118,3 +1118,6 @@ reverse            --- revertir el orden del array
 //!    INNER TEXT 
 //la propiedad innerText de un nodo nos permite modificar su nodo de texto. Es decir, acceder y/o modificar el contenido textual
 //de algun elemento del DOM 
+
+
+43:04 DOM
