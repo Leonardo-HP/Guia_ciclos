@@ -9,3 +9,5 @@ const listadoCarrito =document.getElementById("listadoCarrito")
 const li = document.getElementsByClassName("fruta")
 
 const div = document.getElementsByTagName("div")
+
+titulo.innerText = "www.frutas.com"

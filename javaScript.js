@@ -1114,3 +1114,7 @@ reverse            --- revertir el orden del array
 
 //! getElementsByTagName()
 //sirve para acceder al conjunto de elmentos de la estructura HTML, utilizando su nnomre de etiqueta como identificacion
+
+//!    INNER TEXT 
+//la propiedad innerText de un nodo nos permite modificar su nodo de texto. Es decir, acceder y/o modificar el contenido textual
+//de algun elemento del DOM 
