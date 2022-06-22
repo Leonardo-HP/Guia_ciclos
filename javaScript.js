@@ -995,4 +995,71 @@ const nombres = cursos3.map((el)=> el.nombre)
 console.log(nombres)
 // ["javascript","ReactJS","angular",DesarolloWeb]
 
+const actualizado = cursos.map((el)=>{
+    return {
+        nombre: el.nombre,
+        precio: el.precio *1.23
+    }
+})
+
+console.log(actualizado)
+//la funcion retorna la propiedad precio multiplicada por 1.23
+
+
 //? Ejemplo practico en linea 162 de arrayproductos.js 
+
+//! REDUCE ()
+
+// EL metodo reduce() nos permite obtener un unico valor tras iterar sobre el array
+//funciona como un metodo que resume el array a un  unico valor de retorno
+
+//? Ejemplo practico en linea 178 de arrayproductos.js 
+
+//! SORT
+
+// El metodo sort() nos permite reordenar un array segun un criterio que definamos 
+// recibe una funcion de comparacion por parametro que , a la vez recibe dos elementos del array
+//la funcion retorna  un valor numerico (1,-1,0) que indica que elemento se posiciona antes o despues
+
+// ESTE METODO ES DESTRUCTIVO ES DECIR MODIFICA EL ARRAY SOBRE EL CUAL SE LLAMA
+
+const otrosnumeros = [4,1,5,200] ;
+numeros.sort((a,b)=> a-b ); //[1,5,40,200] 
+numeros.sort((a,b)=> b-a ); // [200,40,5,1]
+// para ordenar numeros, basta con restar uno al otro y el orden indica si sera ordenado de forma ascendente o descendente
+
+
+//! EJEMPLO DE METODOS DE ORDEN SUPERIOR
+
+const productos2 =[{ id: 1, producto: "Arroz",precio: 125},
+                   { id: 2, producto: "Fideo",precio: 70},
+                   { id: 3, producto: "Pan",precio: 50},
+                   { id: 4, producto: "Flan",precio: 100},
+]
+
+const buscado = productos2.find(producto => producto.id === 3)
+console.log(buscado)   // { id: 3, producto: "Pan",precio: 50}
+
+const existe = productos2.some(producto =>producto.nombre === "Harina")
+console.log(existe) // false
+
+const baratos = productos2.some(producto => producto.precio <3)
+console.log(baratos)
+// [{  id: 2, producto: "Fideo",precio: 70}, {id: 3, producto: "Pan",precio: 50} }]
+
+const listaNombres = productos2.map(producto => producto.nombre)
+console.log(listaNombres)
+//[ "Arroz", "Fideo", "Pan", "Flan"]
+
+
+//! DOM 
+// Document Object Model 
+//El modelo de objetos del documento (DOM)es una estructura de objetos generada por el navegador , la cual representa la pagina HTML actual
+
+//Con JavaScript la empleamos para acceder y modificar de forma dinamica elementos de la interfaz 
+
+//Es decir que , por ejemplo, desde JavaScript podemos modificar el texto contenido de una equiqueta < h1>
+
+
+
+

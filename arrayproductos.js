@@ -48,6 +48,11 @@ function generadorAutomatico(){
 
 }
 
+generadorAutomatico()
+function generadorCarrito(){
+    carrito.push(new Producto(1234,"HAMSTER LOCO ECO E17",15000))
+}
+
 // la combinacion de objetos + arrays genera estructuras complejas de datos 
 //los metodos de arrays y las herramientas para recorrerlos nos permiten acceder 
 //y manipular todos estos datos de forma prolija
@@ -144,7 +149,7 @@ debugger
 
 
 //? Ejemplo de SOME
-
+//Muy parecido al find, itera sobre todo el array pero devuelve un true or false
 function existeProducto() {
     let aBuscar = prompt("ingrese el nombre del producto a buscar:").toUpperCase()
     debugger
@@ -159,4 +164,37 @@ function existeProducto() {
 
 
 
-    
+//? Ejemplo de MAP
+
+//con map podemos crear un nuevo array con las modificaciones que queremos aplicar sobre el original
+
+function proyectarIncremento(porc){
+    debugger
+    let proyeccion = productos.map((producto)=>{
+        return {
+            id: producto.id,
+            nombre: producto.nombre,
+            importe: producto.importe,
+            proyeccion: (producto.importe * porc).toFixed(2)
+
+        }
+    })
+    console.table(proyeccion)
+}
+
+//? Ejemplo de reduce 
+//reduce nos permite .
+
+function calcularCarrito() {
+    debugger
+    console.clear()
+    let total = carrito.reduce((acc, producto)=> acc + producto.importe,0)
+// itera todos los numeros dentro de producto importe, en caso de que sean numeros,
+// hay que usar el tercer parametro 0 para indicar desde donde empieza la variable accumulador (ACC)
+    console.log("TOTAL DEL CARRITO: ", total)
+}
+
+
+
+
+
