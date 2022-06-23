@@ -16,13 +16,25 @@ slogan.innerText = "Tus frutas, aqui"
 
 
 function cargarProductos(){
-debugger
+
 listadoFrutas.innerHTML =""
     for (const producto of productos){
- listadoFrutas.innerHTML += "<li class= fruta >" + producto + "</li>"
+        const li = document.createElement("li")
+            li.className = "fruta"
+            li.innerText = producto
+            li.id = producto + "prod"
+            listadoFrutas.append(li)
+
+
+//  listadoFrutas.innerHTML += "<li class= fruta >" + producto + "</li>"
 }
 }
 
 function agregarFruta(){
     productos.push(prompt("que fruta quiere agregar?"))
 }
+
+cargarProductos()
+
+DOM
+1.33

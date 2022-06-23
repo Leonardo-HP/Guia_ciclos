@@ -1129,7 +1129,7 @@ reverse            --- revertir el orden del array
 
 //Codigo html de referencia
 
-{/* <div id= "contenedor "></div>
+/* <div id= "contenedor "></div>
 
 //codigo JS
 
@@ -1158,4 +1158,22 @@ console.log("")
 titulo.className = "red-text" 
 
 
- */}
+ */
+
+//!! AGREGAR O QUITAR DOCUMENTOS 
+
+//para crear elementos se utiliza la funcion document.creatElement(), y se debe indicar el nombre de etiqueta HTML qque representara ese elemento 
+//Luego debe agregarse como hijo el  nodo creado con APPEND(), al body
+//o a otro nodo del documento actual
+
+
+//crear nodo de tipo Elemento, etiqueta p
+let parrafo = document.createElement("P");
+
+
+// insertar HTML IntersectionObserver
+parrafo.innerHTML = "<h2>Hola Coder!</h2>";
+
+
+// añadir el nodo Element como hijo de body
+document.body.append(parrafo);
