@@ -11,3 +11,18 @@ const li = document.getElementsByClassName("fruta")
 const div = document.getElementsByTagName("div")
 
 titulo.innerText = "www.frutas.com"
+
+slogan.innerText = "Tus frutas, aqui"
+
+
+function cargarProductos(){
+debugger
+listadoFrutas.innerHTML =""
+    for (const producto of productos){
+ listadoFrutas.innerHTML += "<li class= fruta >" + producto + "</li>"
+}
+}
+
+function agregarFruta(){
+    productos.push(prompt("que fruta quiere agregar?"))
+}

@@ -1120,4 +1120,42 @@ reverse            --- revertir el orden del array
 //de algun elemento del DOM 
 
 
-43:04 DOM
+//!   INNER HTML 
+ //todo este es el que necesito no inner text
+// permite definir el codigo html interno del elemento seleccionado 
+// el navegador lo interpreta como codigo html y no como contenido de texto 
+// permitiendo desde un string crear una nueva estructura de etiquetas y contenido
+
+
+//Codigo html de referencia
+
+{/* <div id= "contenedor "></div>
+
+//codigo JS
+
+let container = document.getElementById("contenedor")
+
+// cambio el codigo HTML interno 
+
+container.innerHTML = "<h2> "Hola mundo" </h2><p>Lorem Impsum</p>"
+
+
+//Resultado en el DOM 
+
+<div id= "contenedor">
+<h2>Hola Mundo!</h2>
+<p>Lorem Impsum</p>
+</div>
+
+1.1042 clase DOM
+
+
+// //! CLASSNAME 
+// A traves de la propiedad clasName de algun nodo seleccionado
+//  podemos acceder al atriputo class del mismo y definir cuales van a ser sus clases
+titulo.className
+console.log("")
+titulo.className = "red-text" 
+
+
+ */}
