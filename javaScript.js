@@ -1218,3 +1218,5 @@ let concatenado = "ID: " + producto.id + " - producto: " + producto.nombre + "$"
 let plantilla =`ID: $(producto.id) - Producto ${producto.nombre} $
 ${producto.precio}`;
 
+
+1.45 dom
