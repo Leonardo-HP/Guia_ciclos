@@ -36,5 +36,3 @@ function agregarFruta(){
 
 cargarProductos()
 
-DOM
-1.33

@@ -1177,3 +1177,44 @@ parrafo.innerHTML = "<h2>Hola Coder!</h2>";
 
 // añadir el nodo Element como hijo de body
 document.body.append(parrafo);
+
+//Para Eliminar nodos existentes y nuevocs , el metodo remoce()
+//permite eliminar un nodo seleccionado del DOM
+
+let  parrafo = document.getElementById("parrafo1");
+//Eliminando el propio elemento
+parrafo.remove();
+
+
+let paises = document.getElementsByClassName("paises");
+// eliminando el primer elemento de la clase paises
+paises[0].remove()
+
+
+//! OBTENER DATOS DE UNPUTS
+//para obtener o modificar datos de un formulario HTML desde JS
+//podemos hacerlo mediante DOM Accediendo a la propiedad value
+// de cada imput seleccionado
+
+//HTML de referencia
+{/* <input id= "nombre" type = "text">
+<input id= "nombre" type = "text"> */}
+
+
+//JS
+document.getElementById("nombre").value = "homero";
+document.getElementById("edad").value = 39;
+
+//! PLANTILLAS DE TEXTO
+
+//En versiones anteriores a ES6, solia emplearse la concatenacion para incluir valores
+//de las variables en cadena de caracteres (string). Esta forma puede ser poco
+//lefible ante un gran numero de refrenecias EN JS ES& que solventa la situacion con los
+//template strings
+
+let producto = {id : 1, nombre :"Arroz", precio: 125};
+let concatenado = "ID: " + producto.id + " - producto: " + producto.nombre + "$" +producto.precio;
+
+let plantilla =`ID: $(producto.id) - Producto ${producto.nombre} $
+${producto.precio}`;
+
