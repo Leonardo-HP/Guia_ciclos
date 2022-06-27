@@ -1160,52 +1160,81 @@ titulo.className = "red-text"
 
  */
 
-//!! AGREGAR O QUITAR DOCUMENTOS 
+//!! AGREGAR O QUITAR ELEMENTOS 
 
 //para crear elementos se utiliza la funcion document.creatElement(), y se debe indicar el nombre de etiqueta HTML qque representara ese elemento 
 //Luego debe agregarse como hijo el  nodo creado con APPEND(), al body
 //o a otro nodo del documento actual
 
 
-//crear nodo de tipo Elemento, etiqueta p
-let parrafo = document.createElement("P");
+// //crear nodo de tipo Elemento, etiqueta p
+// let parrafo = document.createElement("p");
 
 
-// insertar HTML IntersectionObserver
-parrafo.innerHTML = "<h2>Hola Coder!</h2>";
+// // insertar HTML Interno
+// parrafo.innerHTML = "<p>Hola Coder!</p>";
 
 
-// añadir el nodo Element como hijo de body
-document.body.append(parrafo);
+// // añadir el nodo Element como hijo de body
+// document.body.append(parrafo);
 
 //Para Eliminar nodos existentes y nuevocs , el metodo remoce()
 //permite eliminar un nodo seleccionado del DOM
 
-let  parrafo = document.getElementById("parrafo1");
-//Eliminando el propio elemento
-parrafo.remove();
+// let  parrafo = document.getElementById("parrafo1");
+// //Eliminando el propio elemento
+// parrafo.remove();
 
 
-let paises = document.getElementsByClassName("paises");
-// eliminando el primer elemento de la clase paises
-paises[0].remove()
+// let paises = document.getElementsByClassName("paises");
+// // eliminando el primer elemento de la clase paises
+// paises[0].remove()
 
 
 //! OBTENER DATOS DE UNPUTS
-//para obtener o modificar datos de un formulario HTML desde JS
-//podemos hacerlo mediante DOM Accediendo a la propiedad value
-// de cada imput seleccionado
+// //para obtener o modificar datos de un formulario HTML desde JS
+// //podemos hacerlo mediante DOM Accediendo a la propiedad value
+// // de cada imput seleccionado
 
-//HTML de referencia
-{/* <input id= "nombre" type = "text">
-<input id= "nombre" type = "text"> */}
+// const inputNombre = document.getElementById("nombre")
+// inputNombre.value
+
+// si tenemos un elemento con el ID nombre en la consola, nos devuelve lo que le hayamos asignado 
 
 
-//JS
-document.getElementById("nombre").value = "homero";
-document.getElementById("edad").value = 39;
+//Ejmeoplo aplicado
 
-//! PLANTILLAS DE TEXTO
+// //obtenemmmos el nodo donde vamos a agregar los nuevos elementos 
+// let padre = document.getElementById("personas");
+
+// //Definimos el array con la informacion a agregar 
+// let personas = ["HOMERO","MARGE","BART", "LISA", "MAGGIE"];
+
+// //iteramos el array con for ....of
+
+// for( const persona of personas){
+//     //creamos un nodo <li> y agregamos al padre den cada ciclo
+//     let li = document.createElement("li");
+//     li.innerHTML = persona
+//     padre.appendChild(li);
+// }
+
+
+
+
+
+// //HTML de referencia
+// {/* <input id= "nombre" type = "text">
+// <input id= "nombre" type = "text"> */}
+
+
+// //JS
+// document.getElementById("nombre").value = "homero";
+// document.getElementById("edad").value = 39;
+
+// //! PLANTILLAS DE TEXTO
+
+//DOM 1.40
 
 //En versiones anteriores a ES6, solia emplearse la concatenacion para incluir valores
 //de las variables en cadena de caracteres (string). Esta forma puede ser poco
@@ -1213,10 +1242,15 @@ document.getElementById("edad").value = 39;
 //template strings
 
 let producto = {id : 1, nombre :"Arroz", precio: 125};
-let concatenado = "ID: " + producto.id + " - producto: " + producto.nombre + "$" +producto.precio;
+//concatenado
+let concatenado = "ID: " + producto.id + " - producto: " + producto.nombre + " $ " +producto.precio;
 
-let plantilla =`ID: $(producto.id) - Producto ${producto.nombre} $
-${producto.precio}`;
+// la comilla invertida se usa Alt+96
 
+let plantilla =`ID: ${producto.id} - producto: ${producto.nombre} $ ${producto.precio}`;
 
-1.45 dom
+// El valor es el identico pero la construccion de la plantilla es mas sencilla
+
+console.log(plantilla);
+console.log(concatenado);
+
