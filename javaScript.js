@@ -1241,16 +1241,242 @@ titulo.className = "red-text"
 //lefible ante un gran numero de refrenecias EN JS ES& que solventa la situacion con los
 //template strings
 
-let producto = {id : 1, nombre :"Arroz", precio: 125};
-//concatenado
-let concatenado = "ID: " + producto.id + " - producto: " + producto.nombre + " $ " +producto.precio;
+// let producto = {id : 1, nombre :"Arroz", precio: 125};
+// //concatenado
+// let concatenado = "ID: " + producto.id + " - producto: " + producto.nombre + " $ " +producto.precio;
 
 // la comilla invertida se usa Alt+96
 
-let plantilla =`ID: ${producto.id} - producto: ${producto.nombre} $ ${producto.precio}`;
+// let plantilla =`ID: ${producto.id} - producto: ${producto.nombre} $ ${producto.precio}`;
 
-// El valor es el identico pero la construccion de la plantilla es mas sencilla
+// // El valor es el identico pero la construccion de la plantilla es mas sencilla
 
-console.log(plantilla);
-console.log(concatenado);
+// console.log(plantilla);
+// console.log(concatenado);
 
+//!PLANTILLA LITERALES E InnerHTML
+
+//Las plantillas son un medio para incluir variables en la estructura HTML de nodos nuevos o existentes, modificando el innerHTML
+
+// let producto = {id : 1, nombre :"Arroz", precio: 125};
+// let contenedor =  document.createElement("div");
+
+// //Definimos el innerHTML del elemento con una plantilla de texto 
+
+// contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+//                         <p> Producto: ${producto.nombre}</p>
+//                         <b>$  ${producto.precio}</b>`;
+
+//                         document.body.appendChild(contenedor);
+
+
+//EJEMPLO APLICADO : CREANDO ELEMENTOS DESDE OBJETOS
+
+// const productos2= [{id: 1, nombre: "Arroz", precio: 125},
+// {id: 2, nombre: "Fideo", precio: 70},
+// {id: 3, nombre: "Pan", precio: 50},
+// {id: 4, nombre: "Flan", precio: 100}      ];
+
+// for (const producto of productos2) {
+//     let contenedor = document.createElement("div");
+
+//     //definimos el innerHTML del elemento con una plantilla de texto 
+//     contenedor.innerHTML = `<h3>ID: ${producto.id}</h3>
+//     <p> Producto: ${producto.nombre}</p>
+//     <b>$ ${producto.precio}</b>`
+// document.body.appendChild(contenedor);
+// }
+
+//! QUERY SELECTOR
+//El metodo querySelector() nos permite seleccionar nodos con la misma sintaxis que utilizamos en los selectores CSS
+
+<div id = "contenedor">
+    <p class= "texto"></p>
+</div>
+
+//puedo seleccionar la etiqueta <p> siguiendo la sintaxis de CSS para selectores ;
+let parrafo = document.querySelector("#contenedor p")
+
+//seleccionar solo el contenedor por id con #
+
+let contenedor = document.querySelector("#contenedor")
+
+//o por clase:
+
+parrafo = document.querySelector(".texto")
+
+// Lo inteneranter del querySelector es que tambien aplica a pseudo-clases de CSS
+//brindando un nivel mas avanzado de precision:
+
+let radioChecked = document.querySelector(".radio:checked")
+
+// suponiendo que etengo elemento html radio button y quiero seleccionr solo 
+//aquel que este en checked, esto lo puedo lograr muy facil con querySelector y la pseudo-clase de CSS
+
+//! QUERYSELECTORALL
+
+//query selector retorna el primer elemento que coincida con el parametro de busqueda, o sea un solo elemento .
+//si quiero obtener una coleccion de elementos puedo utilizar el metodo querySelectorAll()
+//siguiendo el mismo comportamiento.
+
+//! EVENTOS
+
+// Los eventos son la manera que tenemos en javascript de controlar las acciones de los usuarios y definir un comportamiento
+//de la pagina o aplicacion cuando se produzcan
+
+//Con JavaScripty es posible definir que sucede cuando se produce un evento, por ejemplo, cuando se realiza
+//clic en cierto elemento o se inserta un texto en un determinado campo 
+
+//como funciona?
+//javascript permite asignar una funcion a cada uno de lo seventos
+// reciben el nombre de event handlers o manejadores e evventos
+//asi Ante cada evento Javascript asigna y ejecuta la funcion asociada al mismo
+
+//Hay que entender que los eventos suceden constantemente en el navegador
+//Javascript lo que nos permite es escuchar eventos sobre elementos seleccionados 
+
+//Cuando escuchamos el evento que esperamos se ejecuta la funcion que definimos en respuesta
+
+//a esta escucha se le denomina event listener
+
+
+ //! Opcion 3: Sintaxis
+
+ // Determinar el evento especificando el manejador de evento en el atributo de una etiqueta HTML
+
+// la denominacion del atributo es identica al de la propieda de la opcion 2 (prefijo ON)
+
+/* <input type="button" value= "CLICK2" onclick="alert("Respuesta 3") ;"> */
+
+//la funcion puede declararse entre las comillas o bien tomarse una referencia existente en el scrpit
+
+//! Opcion 2
+
+//Eplear una propiedad del nodo para definir la respuesta al evento. Las propiedades se identifican con el nombre del evento y el prefijo ON
+
+//Tambien es posible emplear funciones anonimas para definir los manejadores de eventos
+
+// </html>
+//     <head>
+//         <title>Mi primer APP</title>
+//     </head>
+// </html>
+// <body>
+//     <h2>Coder House</h2>
+
+//     <button  id="btnPrincipal">CLICK</button>
+
+
+// <script>
+//     let boton = 
+//     document.getElementById("btnPrincipal")
+//     boton.onclick = () => (console.log("Respuesta 2"))
+// </script>
+// </body>
+// </html>
+
+//! Opcion 1
+
+// El metodo addEventListener() permite definir que evento se escucha sobre cualquier elemento seleccionado
+
+//El primer parametro corresponde al nombre del evento y el segundo a la funcion de respuesta
+
+// <html>
+//     <head>
+//         <title>Mi primer APP</title>
+//     </head>
+
+// <body>
+//     <h2>Coder House</h2>
+//     <button  id="btnPrincipal">CLICK</button>
+
+
+// <script>
+//     let boton = 
+//     document.getElementById("btnPrincipal")
+//     boton.addEventListener("click", respuestaClick)
+//     function respuestaClick (){
+// console.log("Respuesta evento");
+//     }
+// </script>
+
+
+// </html>
+// </body>
+
+// las opciones 1y2 
+// son las mas recomendades
+// si bien se pueden presentar casos de aplicacion especificos
+// (por ejemplo, en la opcion1 el nombre del evento puede venir de una variable a 
+// usar la propiedad, y esto no puede hacerse en la 2),
+//se identifican como formas de definicion de eventos equivalentes
+
+ // La opcion 3, auqnue es de facil implementacion, no es recomendad
+ //para proyectos de produccion
+
+ // no se considera buena practica declarar funciones y codigo JavaScript dentro del HTML
+
+ //! Eventos mas comunes
+
+ //mouse 
+ //teclado
+ //change
+ //input
+ //submit
+
+
+ //!Evento del MOUSE
+//Se producen por la interaccion del usuario con el mouse
+//Entre ellos se destacan los que se encuentran a continuacion
+
+//mousedown/mouseup: se oprime/suelta el boton del raton sobre un elemento
+//mouseover/mouseout: el puntero del mouse se mueve sobre/sale del elemento
+//mousemove: El movimiento del mouse sobre el elemento activa el evento
+//click: se activa despues de mousedown o mouse up sobre un elemento valido 
+
+// //CODIGO HTML DE REFERENCIA
+// <button id = "btnMain"> CLICK </button>
+
+// //Codigo JS
+// let boton = document.querySelector("btnMain")
+// boton.onclick = () => {console.log("Click")}
+// boton.onmousemove = ()=> {console.log("move")}
+
+
+//! Eventos del teclado
+//S producen por la interaccion del usuario con el teclado 
+//Entre ellos destacan los que se encuentra acontinuacion 
+
+// KEYDOWN: Cuando se presiona
+// KEYUP:Cuando se suelta una tecla
+// KEYPRESS: cuando el ususario esta tecleando algo se escucha el evento keypress
+
+//CODIGO DE REFERENCIA
+
+// <Input id= "nombre" type = "text">
+// <Input id= "edad" type = "number">
+
+//Codigo JS
+
+let input1= document.getElementById("nombre")
+let input2 = document.getElementById("edad")
+
+input1.onkeyup = () =>{ console.log("KeyUp")}
+input2.onkeydown = () =>{ console.log( "KeyDown")}
+
+// CHANGE: se activa cuando se detecta un cambio en el valor del elemento 
+        //por ejemmplo mientras se escribe en un input de texto no hay evento change,
+        //pero cuando se pasa a otra seccion de la aplicacion entonces si ocurre
+
+//CODIGO DE REFERENCIA
+
+// <Input id= "nombre" type = "text">
+// <Input id= "edad" type = "number">
+
+//Codigo JS
+
+let input1= document.getElementById("nombre")
+let input2 = document.getElementById("edad")
+
+input1.onchange = () =>{ console.log("KeyUp")}
+input2.onchange = () =>{ console.log( "KeyDown")}
