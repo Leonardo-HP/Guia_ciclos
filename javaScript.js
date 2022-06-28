@@ -1480,3 +1480,90 @@ let input2 = document.getElementById("edad")
 
 input1.onchange = () =>{ console.log("KeyUp")}
 input2.onchange = () =>{ console.log( "KeyDown")}
+
+//! Evento input
+
+//si queremos ejecutar una funcion cada vez que se tipea sobre el campo conviene trabajar
+//directamente con elevento input
+
+//codigo HTML de referencia
+{/* <input id = "nombre " type = "text"> */}
+
+//codigo JS 
+
+let input1 = document.getElementById("nombre")
+input1.addEventListener("input", () => {
+    console.log(input1.value)
+})
+
+//! Evento Submit
+
+//El evento submit se activa cuando el formulario es enviado, normalmente se utiliza para validar 
+// el formulario antes de ser enviado al servidor o bien para abortar el envio y procesarlo con JavaScript
+
+//CODIGO HTML DE REFERENCIA 
+{/* <form id= "formulario">
+    < input type="text">
+    < input type="number">
+    < input type="submit" value ="enviar">
+</form> */}
+
+//codigo JS
+
+// let miFormulario = document.getElementById("formulario");
+// miFormulario.addEventListener("submit", validarFormulario);
+
+// function validarFormulario (e){
+
+// function validarFormulario(e);
+// e.preventDefault();
+// console.log("Formulario Enviado")
+// }
+
+//! Otros Eventos
+
+//Existen otros eventos que podemos utilizar
+//algunos son eventos estandar definidos en las especificaciones oficiaes, mientras que otros son eventos usados internamente
+//por navegadores especificos
+
+btnSubmit.addEventListener("mousemove", ()=>{
+    btnSubmit.title= "te paraste sobre el boton"
+})
+
+//la forma de declararlos es similar a lo abordado en esta clase lo que necesitamos aprender es bajo que condicion se disparan los eventos que buscamos implementar
+//en alfunos casos, necesitamos obtener informacion contextual del evento para poder realizar acciones
+
+//por ejemplo, ante el evento submmit necesitamos prevenir el comportamiento por defecto para operar correctamente
+
+// para esto existe en JavaScript el objeto event 
+//en todos los navegadores modernos se crea de forma autmoatica un parametro que se pasa a la funcion manejadore, por lo que no es necesario incluirlo en llamada
+//Ese parametro puede o no usarse en el handler, pero siempre estara disponible en la llamada.
+
+// Ejemplo aplicado : datos del formulario usando el EVENt
+
+//CODIGO HTML DE REFERENCIA
+{/* <form id= "formulario">
+    <input type = "text">
+    <input type = "text">
+    <input type = "text">
+<form/> */}
+
+
+    //CODIGO JS
+let miFormulario = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    //cancelamos el comportamiento del evento
+    e.preventDefault();
+    //obtenemos el elemento desde el cual se disparo el evento 
+    let formulario = e.target
+
+    //Obtenemos el valor del primer hijo <input type="text">
+    console.log(formular.children[0].value);
+    //obtenemos el valor del segunodo hijo <input type="number">
+    console.log(formulario.children[1].value);
+}
+
+
+

@@ -75,5 +75,52 @@ cargarProductos()
 // })
                             
 
+// inputs para checkout
+
+const inputNombre = document.querySelector("#inputNombre")
+const inputTelefono = document.querySelector("#inputTelefono")
+const inputEmail = document.querySelector("#inputEmail")
+const btnSubmit = document.querySelector("#submit")
+
+let datosDeInput = ""
+
+// // cuando el input de texto tenga el cursor de escritura se va a aplicar un color 
+// inputNombre.addEventListener("focus", ()=>{
+//     inputNombre.className="fondo-inputs"
+// })
+// // cuando hagamos click en otro lado que no sea el input de escritura se
+// inputNombre.addEventListener("blur", () => [
+//     inputNombre.className=""
+// ])
+
+// inputNombre.addEventListener("input", () => {
+
+// console.log(inputNombre.value)
+
+// })
+
+const focoEnCampos = ()=> {
+    // funcion para generar escucha de eventos dinamica
+    // por si se agregan otros elementos HTML del tipo INPUT
+    const campos = document.querySelectorAll("input")
+    for (let campo of campos) {
+        if (campo.type != "submit") {
+            campo.addEventListener("focus", ()=> campo.className = "fondo-inputs")
+            campo.addEventListener("blur", ()=> campo.className = "")
+        }
+    }
+}
 
 
+focoEnCampos()
+
+
+// el objeto global EVENT
+
+document.addEventListener("submit", (e)=> {
+//metodo .preventdefault previene que suceda el evento por defecto
+    e.preventDefault()
+    console.warn("Frenamos el evento SUBMIT de HTML")
+
+
+})
