@@ -120,7 +120,36 @@ focoEnCampos()
 document.addEventListener("submit", (e)=> {
 //metodo .preventdefault previene que suceda el evento por defecto
     e.preventDefault()
+    guardarDatosDeUsr()
     console.warn("Frenamos el evento SUBMIT de HTML")
 
 
 })
+
+
+//? ACCESO TIPO OBJETOS
+function guardarDatosDeUsr(){
+    debugger
+    const datosDeUsr = {
+    nombre: inputNombre.value,
+    telefono: inputTelefono.value,
+    email: inputEmail.value
+}
+
+//? JSON
+let str = JSON.stringify(datosDeUsr)
+localStorage.setItem("datosDeUsr", str)
+}
+
+function recuperoDatosDeUsr(){
+    if (localStorage.getItem("datosDeUsr")){
+        const datosDeUsr = JSON.parse(localStorage.getItem("datosDeUsr"))
+            inputNombre.value = datosDeUsr.nombre
+            inputTelefono.value = datosDeUsr.telefono
+            inputEmail.value = datosDeUsr.email
+
+}
+}
+
+// esto hace que si vuelven al mismo lugar los input ya esten con la informacion
+recuperoDatosDeUsr()

@@ -1695,3 +1695,88 @@ console.log("valor: "+ localStorage.getItem(clave));
 const productoJson = {id: 2, producto: "Arroz"};
 
 localStorage.setItem("productoJson", productoJson)// se guarda [object Object]
+
+
+//ACCESO TIPO OBJETO
+
+//Dado que el localStorage y sessionStorage son objetos globales,
+//es posible crear y acceder a las claves como si fueran propiedades 
+// pero esto no es muy recomendable por que hay eventos asociados a la modificacion del storage cuando se emplea geItem
+// o setItem
+
+//Guarda una clave
+localStorage.numeroPrueba = 5;
+
+//leer una clave
+alert(localStorage.numeroPrueba);
+
+let clave = "toString";  // toString metodo reservado
+localStorage [clave] = "6"
+
+//!! todo LO QUE ENTRA EN STORAGE ES CADENA DE TEXTO
+
+//! QUE ES JSJON
+// javaScript Object Notation (JSON) es un formato basado en texto plano
+// para representar datos estructurados con la sintaxis de objetos de JavaScript
+// Es comundmente utilizado para enviar y almacenar datos en aplicaciones web
+
+// Aunque es muy parecido (casi similar) a la sintaxis de JavaScript 
+// puede ser utilizado independientemente de JavaScript, y 
+// muchos entornos de programacion poseen la capcidad de leer
+//(convertir ; parsear) y generar JSON
+
+//JSON ES UN STRING CON UN FORMATO ESPECIFICO
+
+//! CONVERSIONES DE/Hacia JSON
+
+// Cuando sea necesaio enviar un objeto JavScript al servidor o almacenarlo en storage,
+//sera necesario convertirlo a un JSON (una cadena) antes de ser enviado
+// Para eso usamos los siguientes metodos:
+
+//Stringify acepta un objeto como parametro y devuelve la forma de texto JSON equivalente
+//parse recibe un texto JSON como parametro y devuelve el objeto JavaScript correspondiente
+
+//! STRINGIFT 
+//con JSON.stringify podemos transformar un objeto JavaScript a un string en formato JSON
+
+// const producto1 = {id: 2,producto: "Arroz"}
+// const enJSON = JSON.stringify(producto1);
+
+// console.log(enJSON); // {"id":2, "producto": "Arroz"}
+// console.log(typeof producto1); // object
+// console.log(typeof enJSON); //string
+
+// localStorage.setItem("producto1",enJSON);
+//se fuarda {"id":2, "producto": "Arroz"}
+
+//! PARSE
+//con JSON.parse p"demos transformar string en formato JSON a objeto JavaScript
+// const enJSON = "{"id": 2, "producto" : "Arroz"}";
+// const producto1 = JSON.parse(enJSON);
+
+// console.log(typeof enJSON); //string
+// console.log(typeof producto1); // object
+
+// console.log(producto1.producto); // {"id":2, "producto": "Arroz"}
+
+// const producto2 = JSON.parse(localStorage.getItem("producto1"));
+// console.log(producto2.id); // 2
+
+
+//!! ejemplo aplicado
+
+const productos = [{id: 1, producto: "Arroz", precio:125},
+{id: 1, producto: "Fideo", precio:70},
+{id: 1, producto: "Pan", precio:50},
+{id: 1, producto: "Flan", precio:100}];
+
+const guardarLocal = (clave, valor) => {localStorage.setItem(clave,valor)};
+
+//Almacenar producto por producto
+
+for(const producto of productos){
+    guardarLocal (producto.id, JSON.stringify(producto));
+}
+
+// o almacenar array completo
+guardarLocal("listaProductos",JSON.stringify(productos));
