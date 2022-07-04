@@ -1566,4 +1566,132 @@ function validarFormulario(e){
 }
 
 
+// ! STORAGE O ALMACENAMIENTO
 
+// Eo objeto Storage (API de almacenamiento web) permite almacenar datos de maera local en el navegador sin necesidad de realizr ninguna
+//cconexcion con el servidor
+
+// de esta manera , cada cliente puede preservar informacion de la aplicacion 
+
+//el navegador nos ofrece varios tipos de storage 
+
+//! STORAGE O ALMACENAMIENT
+
+//las opciones disponibles con Storage API, son:
+
+//?local/sessionStorage
+//cookies
+
+
+//?WebSQL 
+// de salida no se esta actualizando
+
+//?indexdb
+// muy pesado youtube premium y netflix descarga
+
+//tranajaremos con localStorage y sessionStorage
+
+//cada sitio o aplicacion web genera su cuota de storage (limitada al sitio ) 
+//solo si empieza a almacenar datos.
+
+//tanto localStorage como sessionStorage cuantan con cuatro metodos para manejar el almacenamiento de informacion del lado del usuario
+
+//- setitem()
+//-getItem()
+//-removeItem()
+//-clear()
+
+//! LOCALSTORAGE
+//los dato s que guardamos en localStorage se almacenan en el navegador de forma indefinidad (o hasta tanto se borren la informacion de navegacion del browser)
+//LOS DATOS PERSISTEN ANTE REINICIOS DE NAVEGADOR
+
+//! LocalStorafe : setItem()
+
+// para almacenar informacion se utiliza setItem()
+
+// Metodo-> localStorage.setItem(clave,valor)
+// clave = nombre para identifiacar el ELEMENTO 
+// valor = valor/ contenido del elemento
+
+localStorage.setItem("Bienvenida","Hola Coder!"),
+localStorage.setItem("esValido",true);
+localStorage.setItem("unNumero",20)
+
+
+//CLAVE - VALOR
+
+// la informacion almacenada en el Storafe se fuarda en forma de CLAVE-VALOR
+
+//similar al tratamiento de objetos, definimos claves en el storage donde almacenamos valores.
+// Podemos ver el storage en el navegador a traves de la pestaño de application
+
+// en la pestaña aplicacion a la izquierda tenemos storage y dentro de storage podemos navegar a traves
+// de los metodos como indexDB webSQL cookies
+
+//session storage se borra cada que cerramos la ventana
+
+//localStorage.setItem("nombre",inputNombre.value)
+// para agregar el valor dentro del input del nombre 
+
+//localStorage.setItem("email",inputEmail.value)
+//localStorage.setItem("email",inputEmail.value)
+
+//!sessionStorage: setItem()
+//la informacion alamacenada en sessionStorage (variable global preexistente) 
+//se alamacena en el navegador hasta que el usuario cierre la ventana.
+
+// Solo existe dentro de la pestaña actual del navegador. Otra pestaña con la misma pagina 
+//tendra otro sessionStorage distinto, pero se comparte entre iframes en la pestaña ( asumiendo que etengan el mismo origen)
+
+// inputEmail.value = sessionStorage.getItem("nombre")
+// sessionStorage.setItem("nombre",inputNombre.value)
+
+// el tratamiento es similar al localStorage:
+
+// Metodo-> sessionlStorage.setItem(clave,valor)
+// clave = nombre para identifiacar el ELEMENTO 
+// valor = valor/ contenido del elemento
+
+localStorage.setItem("seleccionados",[1,2,3]),
+localStorage.setItem("esValido",true);
+localStorage.setItem("unNumero","infomail.com")
+
+
+//? session storage casi no se usa 
+
+//! Recorriendo el storage
+
+//es posible obtener todos los calores almacenados en el localStorage o sessionStorage con un bucle
+// pero no podemos usar for...of por queue son objetos iterables, ni for ...in
+//por que obtenemos otras propiedades del objeto que no son valores almacenados
+
+//el bucle a emplear es for con el metodo key
+
+//ciclo opara recorrer las claves almacenadas en el objeto localStorage
+
+for(let i=0; i < localStorage.length; i++){
+    let clave= localStorage.key(i);
+}
+console.log("clave:"+ clave)
+console.log("valor: "+ localStorage.getItem(clave));
+
+//!Eliminar datos del storage
+
+//Podemos eliminar la informacion almacenada en sessionStorage o LocalStorage
+//usando el metodo removeItem o clear:
+
+//! JSON
+
+//Si queremos almacenar la informacion de un objeto en un storage 
+// hay que tener en cuenta que tanto la clave como el valor se almacenan en strings
+
+//Ante cualquier otro tipo a guardar como un numero o un objeto , se convierte a cadena de texto automaticamente
+
+//! alamcenar objetos en storage
+
+// Entonces al buscar almacenar un objeto sin una transformacion previa, fuardamos [object Object]
+//la converson por defecto de objeto a string. para fuardar la informacion correctamente hay que trasformar al objeto en JSON
+
+const productoJson = {id: 2, producto: "Arroz"};
+
+localStorage.setItem("productoJson", productoJson)// se guarda [object Object]
