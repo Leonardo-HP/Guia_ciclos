@@ -1290,9 +1290,9 @@ titulo.className = "red-text"
 //! QUERY SELECTOR
 //El metodo querySelector() nos permite seleccionar nodos con la misma sintaxis que utilizamos en los selectores CSS
 
-<div id = "contenedor">
+{/* <div id = "contenedor">
     <p class= "texto"></p>
-</div>
+</div> */}
 
 //puedo seleccionar la etiqueta <p> siguiendo la sintaxis de CSS para selectores ;
 let parrafo = document.querySelector("#contenedor p")
@@ -1458,11 +1458,11 @@ let radioChecked = document.querySelector(".radio:checked")
 
 //Codigo JS
 
-let input1= document.getElementById("nombre")
-let input2 = document.getElementById("edad")
+// let input1= document.getElementById("nombre")
+// let input2 = document.getElementById("edad")
 
-input1.onkeyup = () =>{ console.log("KeyUp")}
-input2.onkeydown = () =>{ console.log( "KeyDown")}
+// input1.onkeyup = () =>{ console.log("KeyUp")}
+// input2.onkeydown = () =>{ console.log( "KeyDown")}
 
 // CHANGE: se activa cuando se detecta un cambio en el valor del elemento 
         //por ejemmplo mientras se escribe en un input de texto no hay evento change,
@@ -1475,11 +1475,11 @@ input2.onkeydown = () =>{ console.log( "KeyDown")}
 
 //Codigo JS
 
-let input1= document.getElementById("nombre")
-let input2 = document.getElementById("edad")
+// let input1= document.getElementById("nombre")
+// let input2 = document.getElementById("edad")
 
-input1.onchange = () =>{ console.log("KeyUp")}
-input2.onchange = () =>{ console.log( "KeyDown")}
+// input1.onchange = () =>{ console.log("KeyUp")}
+// input2.onchange = () =>{ console.log( "KeyDown")}
 
 //! Evento input
 
@@ -1491,10 +1491,10 @@ input2.onchange = () =>{ console.log( "KeyDown")}
 
 //codigo JS 
 
-let input1 = document.getElementById("nombre")
-input1.addEventListener("input", () => {
-    console.log(input1.value)
-})
+// let input1 = document.getElementById("nombre")
+// input1.addEventListener("input", () => {
+//     console.log(input1.value)
+// })
 
 //! Evento Submit
 
@@ -1526,9 +1526,9 @@ input1.addEventListener("input", () => {
 //algunos son eventos estandar definidos en las especificaciones oficiaes, mientras que otros son eventos usados internamente
 //por navegadores especificos
 
-btnSubmit.addEventListener("mousemove", ()=>{
-    btnSubmit.title= "te paraste sobre el boton"
-})
+// btnSubmit.addEventListener("mousemove", ()=>{
+//     btnSubmit.title= "te paraste sobre el boton"
+// })
 
 //la forma de declararlos es similar a lo abordado en esta clase lo que necesitamos aprender es bajo que condicion se disparan los eventos que buscamos implementar
 //en alfunos casos, necesitamos obtener informacion contextual del evento para poder realizar acciones
@@ -1550,20 +1550,20 @@ btnSubmit.addEventListener("mousemove", ()=>{
 
 
     //CODIGO JS
-let miFormulario = document.getElementById("formulario");
-miFormulario.addEventListener("submit", validarFormulario);
+// let miFormulario = document.getElementById("formulario");
+// miFormulario.addEventListener("submit", validarFormulario);
 
-function validarFormulario(e){
-    //cancelamos el comportamiento del evento
-    e.preventDefault();
-    //obtenemos el elemento desde el cual se disparo el evento 
-    let formulario = e.target
+// function validarFormulario(e){
+//     //cancelamos el comportamiento del evento
+//     e.preventDefault();
+//     //obtenemos el elemento desde el cual se disparo el evento 
+//     let formulario = e.target
 
-    //Obtenemos el valor del primer hijo <input type="text">
-    console.log(formular.children[0].value);
-    //obtenemos el valor del segunodo hijo <input type="number">
-    console.log(formulario.children[1].value);
-}
+//     //Obtenemos el valor del primer hijo <input type="text">
+//     console.log(formular.children[0].value);
+//     //obtenemos el valor del segunodo hijo <input type="number">
+//     console.log(formulario.children[1].value);
+// }
 
 
 // ! STORAGE O ALMACENAMIENTO
@@ -1669,11 +1669,11 @@ localStorage.setItem("unNumero","infomail.com")
 
 //ciclo opara recorrer las claves almacenadas en el objeto localStorage
 
-for(let i=0; i < localStorage.length; i++){
-    let clave= localStorage.key(i);
-}
-console.log("clave:"+ clave)
-console.log("valor: "+ localStorage.getItem(clave));
+// for(let i=0; i < localStorage.length; i++){
+//     let clave= localStorage.key(i);
+// }
+// console.log("clave:"+ clave)
+// console.log("valor: "+ localStorage.getItem(clave));
 
 //!Eliminar datos del storage
 
@@ -1780,3 +1780,38 @@ for(const producto of productos){
 
 // o almacenar array completo
 guardarLocal("listaProductos",JSON.stringify(productos));
+
+//! Recuperar datos
+
+//muchas veces usamos el storage para recuperar datos relacionados
+//a la ultima navegacion del usuario , por ejemplo, su ultima sesion de login o el ultimo
+//estado de su carrito de compras
+
+//para esto, pensamos en inicializar las variabes de la app consulta0
+// consultando el Storage en el momento de inicio
+
+let usuario;
+let usuarioEnLS = JSON.stringify(localStorage.getItem("usuario"))
+
+
+//si habia algo almacenado, lo recuperamos. si no le pedimos un ingreso
+
+if ( usuarioEnLS) {
+    usuario = usuarioEnLS
+}
+else{
+    usuario = prompt("ingrese su nombre de usuario")
+}
+
+//!! Puntos a tener en cuenta
+
+//Los datos en formato JSON se pueden almacenar en archivos externos . json Ejemplo: datos.json
+
+//JSON es solo un formato de datos - contiene solo propiedades , no metodos
+
+//una coma o dos puntos mal ubicados pueden producir que un archivo JSOn no funcione 
+//se deve se rcuidadeoso para validar cualquier dato que se quiera utilizar
+//https://jsonformatter.curiousconcept.com/
+
+//A diferencia del codigo JavaScript en que las propiedades del objeto pueden no estar entre comillas, en JSON 
+

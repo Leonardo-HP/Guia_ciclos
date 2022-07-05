@@ -33,6 +33,8 @@ listadoFrutas.innerHTML =""
 function agregarAlCarrito(prod){
     //Agregamos al carrito
     carrito.push(prod)
+
+    guardoCarrito()
     //creamos el elemento tipo li
     const li = document.createElement("li")
     //se le genera la clase difernete y correspondiente al carrito
@@ -49,10 +51,19 @@ function agregarAlCarrito(prod){
 
 
 }
+
+
+
 function removerDelCarrito(prod){
 
     const productoARemover = document.getElementById(`${prod}`)
         productoARemover.remove()
+        item = carrito.indexOf(productoARemover.innerHTML)
+        if(item >= 0){
+            carrito.splice(item,1)
+            guardoCarrito()
+        }
+        console.warn(`${prod} ha sido eliminado del carrito.`)
 }
 }
 
@@ -62,17 +73,17 @@ function agregarFruta(){
 
 cargarProductos()
 
-// const  imagen = document.querySelector("img") 
-// // imagen.onclick = () =>{
-// // alert("detecatendo el evento Click")
-// // }
+const  imagen = document.querySelector("img") 
+// imagen.onclick = () =>{
+// alert("detecatendo el evento Click")
+// }
 
-//                                 //el segundo parametro podemos
-//                                 //llamar a la funcion o agregar 
-//                                 //arrow function       
-// imagen.addEventListener("click", ()=>{
-//     agregarFruta(), alert("detecatendo el evento Click")
-// })
+                                //el segundo parametro podemos
+                                //llamar a la funcion o agregar 
+                                //arrow function       
+imagen.addEventListener("click", ()=>{
+    agregarFruta(), alert("detecatendo el evento Click")
+})
                             
 
 // inputs para checkout
@@ -84,20 +95,20 @@ const btnSubmit = document.querySelector("#submit")
 
 let datosDeInput = ""
 
-// // cuando el input de texto tenga el cursor de escritura se va a aplicar un color 
-// inputNombre.addEventListener("focus", ()=>{
-//     inputNombre.className="fondo-inputs"
-// })
-// // cuando hagamos click en otro lado que no sea el input de escritura se
-// inputNombre.addEventListener("blur", () => [
-//     inputNombre.className=""
-// ])
+// cuando el input de texto tenga el cursor de escritura se va a aplicar un color 
+inputNombre.addEventListener("focus", ()=>{
+    inputNombre.className="fondo-inputs"
+})
+// cuando hagamos click en otro lado que no sea el input de escritura se
+inputNombre.addEventListener("blur", () => [
+    inputNombre.className=""
+])
 
-// inputNombre.addEventListener("input", () => {
+inputNombre.addEventListener("input", () => {
 
-// console.log(inputNombre.value)
+console.log(inputNombre.value)
 
-// })
+})
 
 const focoEnCampos = ()=> {
     // funcion para generar escucha de eventos dinamica
@@ -153,3 +164,26 @@ function recuperoDatosDeUsr(){
 
 // esto hace que si vuelven al mismo lugar los input ya esten con la informacion
 recuperoDatosDeUsr()
+
+
+
+
+function guardoCarrito (){
+    if(carrito.length > 0){
+    localStorage.setItem("carrito",JSON.stringify(carrito))
+}}
+
+function recuperoCarrito(){
+    debugger
+    let miCarrito
+    if (miCarrito = JSON.parse(localStorage.getItem("carrito"))){
+        miCarrito.forEach(fruta => {
+            carrito.push(fruta)
+    
+        });
+        const carrito = JSON.parse( localStorage.getItem("carrito"))
+document.querySelectorAll("#productosComprados").innerHTML = carrito.join (" - ")
+    }
+}
+recuperoCarrito()
+
